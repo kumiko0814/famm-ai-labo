@@ -474,6 +474,107 @@ var demoAdv=[
 {author_name:"AIラボ運営",message:"AIとの付き合い方について、ひとつだけ。\n全部いっぺんに覚えようとしなくて大丈夫です。まずは「提案文のたたき台」と「クライアントの事前リサーチ」の2つだけAIに渡してみてください。提案の数と質が、両方いっぺんに上がります。",created_at:new Date(Date.now()-3600000).toISOString()}
 ];
 
+/* ===== AI fammのAI実験ノート（おしらせのうち【AIメモ】で始まるものだけ） ===== */
+var LABTAG="【AIメモ】";
+var demoLabNotes=[
+{id:"dm1",worry:"【AIメモ】提案文のたたき台は、Claudeに「募集要項をそのまま貼る→自分の実績を3つ渡す」の順で頼むと精度が上がりました。順番を逆にすると一般論になります。",created_at:new Date(Date.now()-7200000).toISOString()},
+{id:"dm2",worry:"【AIメモ】参考デザインの言語化は、ChatGPTに画像を渡して「余白・配色・フォントの3点で分解して」と聞くのが早いです。",created_at:new Date(Date.now()-260000000).toISOString()},
+{id:"dm3",worry:"応募ノートを更新しました。新しい案件が入っています。",created_at:new Date(Date.now()-300000000).toISOString()}
+];
+function renderLabNotes(list){
+  var box=document.getElementById("labnotes");
+  if(!box) return;
+  var picked=(list||[]).filter(function(n){ return String(n.worry||"").indexOf(LABTAG)===0; });
+  box.innerHTML="";
+  if(!picked.length){
+    var em=document.createElement("div"); em.className="empty";
+    em.textContent="メモはこれから増えていきます。AI fammがAIを試したら、ここに並びます。";
+    box.appendChild(em); return;
+  }
+  picked.forEach(function(n){
+    var e=document.createElement("div"); e.className="hitem";
+    var d=document.createElement("span"); d.className="d"; d.textContent=fmt(n.created_at); e.appendChild(d);
+    var b=document.createElement("div");
+    fillText(b,String(n.worry||"").slice(LABTAG.length).replace(/^[\s　]+/,""));
+    e.appendChild(b);
+    box.appendChild(e);
+  });
+}
+function loadLabNotes(){
+  if(DEMO){ renderLabNotes(demoLabNotes); return; }
+  sb("ailab_notes?member_id=eq.notice_all&mood=eq.おしらせ&order=created_at.desc&limit=30").then(function(r){return r.json();})
+    .then(function(j){ if(Array.isArray(j)) renderLabNotes(j); }).catch(function(){});
+}
+
+function renderHist(list){
+  var h=document.getElementById("hist");
+  if(!list.length){ h.innerHTML='<div class="empty">作成したカルテが、ここに並びます。</div>'; return; }
+  h.innerHTML="";
+  list.forEach(function(n){
+    var e=document.createElement("div"); e.className="hitem";
+    var ims=IMGMAP[String(n.id)]||[];
+    e.innerHTML='<span class="d">'+fmt(n.created_at)+'</span>'+
+      '<div>'+esc(n.worry)+'</div>'+(n.want?'<div class="w2">AIにしてほしいこと：'+esc(n.want)+'</div>':'')+
+      (ims.length?'<div class="hthumbs">'+ims.map(function(d){ return '<img src="'+d+'" alt="添付画像">'; }).join("")+'</div>':'');
+    Array.prototype.forEach.call(e.querySelectorAll(".hthumbs img"),function(im){ im.onclick=function(){ viewImg(im.src); }; });
+    h.appendChild(e);
+  });
+}
+function renderAdv(list){
+  var a=document.getElementById("advlist");
+  if(!list.length){ a.innerHTML='<div class="empty"><img src="assets/fm-laptop.png" alt="" style="width:88px; display:block; margin:0 auto 8px;" onerror="this.style.display=\'none\'">カルテを作成すると、ここにAI fammからのアドバイスが届きます。</div>'; return; }
+  a.innerHTML="";
+  list.forEach(function(m){
+    var e=document.createElement("div"); e.className="adv";
+    e.innerHTML='<div class="head"><img class="av" src="assets/fm-desk.png" alt="" onerror="this.style.display=\'none\'"><div><div class="nm">'+esc(m.author_name||"AI famm")+'</div><div class="dt">'+fmt(m.created_at)+'</div></div></div>'+
+      '<div class="body">'+esc(m.message).replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>')+'</div>';
+    a.appendChild(e);
+  });
+}
+var lastNotes=[], lastAdv=[], lastManual="", IMGMAP={}, demoImgs=[], EXPIRY="", STOPPED=false;
+/* 受講期限を過ぎていたら、画面を停止表示に切り替える（オープンチャットはそのまま） */
+function checkExpiry(){
+  if(!EXPIRY||EXPIRY==="9999-12-31"||STOPPED) return;
+  var today=todayKey();
+  if(EXPIRY>=today) return;
+  STOPPED=true;
+  var main=document.querySelector(".colmain")||document.getElementById("main-content")||document.body;
+  var d=new Date(EXPIRY+"T00:00:00");
+  var box=document.createElement("div"); box.className="card"; box.id="stopCard";
+  box.innerHTML='<h2>受講期間が終了しました</h2><p class="qguide" style="margin-top:8px;">'+(d.getMonth()+1)+'月'+d.getDate()+'日で、カルテの受講期間が終わりました。ここまで一緒に進めてくださって、ありがとうございました🤍</p>'+
+    '<p class="qguide" style="margin-top:10px;"><b>続ける場合</b>：月額【famm設定】円（税込）の継続プランで、カルテ・返信・取扱説明書をそのまま使い続けられます。継続のお手続きは【famm設定】のご案内をご確認ください。</p>'+
+    '<p class="qguide" style="margin-top:10px;"></p>';
+  main.innerHTML=""; main.appendChild(box);
+}
+function splitRows(j){
+  /* 同じ member_id の行を、カルテ本文／添付画像／営業ログ に分ける */
+  IMGMAP={}; LOGS=[];
+  var notes=[];
+  j.forEach(function(n){
+    if(n.mood==="添付画像"){ var k=String(n.want||"").replace(/^karte:/,"").split("#")[0]; (IMGMAP[k]=IMGMAP[k]||[]).push(n.worry); }
+    else if(n.mood==="営業ログ"){ LOGS.push(n); }
+    else if(n.mood==="期限"){ if(!EXPIRY||String(n.want||"")>EXPIRY) EXPIRY=String(n.want||""); }
+    else if(n.mood==="応募ノート"){ }
+    else notes.push(n);
+  });
+  Object.keys(IMGMAP).forEach(function(k){ IMGMAP[k].reverse(); });
+  return notes;
+}
+function loadAll(){
+  if(DEMO){
+    lastNotes=splitRows(demoNotes.slice().concat(demoImgs)); lastAdv=demoAdv.slice();
+    renderHist(lastNotes); renderAdv(lastAdv); renderAnalysis(); renderLog(); return;
+  }
+  sb("ailab_notes?member_id=eq."+UID+"&order=created_at.desc&limit=300").then(function(r){return r.json();})
+    .then(function(j){ if(Array.isArray(j)){ lastNotes=splitRows(j); checkExpiry(); if(STOPPED) return; renderHist(lastNotes); renderAnalysis(); renderLog(); } }).catch(function(){});
+  sb("ailab_advice?target_id=eq."+UID+"&order=created_at.desc&limit=100").then(function(r){return r.json();})
+    .then(function(j){ if(Array.isArray(j)){ j=j.filter(function(a){ return String(a.author_name||"").indexOf("draft")!==0; }); lastAdv=j; renderAdv(j); renderAnalysis(); } }).catch(function(){});
+}
+
+(function(){
+  var el=document.getElementById("niCur");
+  if(el) el.onclick=function(){ if(window.switchView) window.switchView("v_cur"); };
+})();
 
 
 /* ===== AI fammからのメッセージ（1人1回表示） ===== */
