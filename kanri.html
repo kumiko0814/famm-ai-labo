@@ -7,119 +7,118 @@
 <title>AIカルテ 管理者ボード｜AI活用ラボ</title>
 <style>
 :root{
-  --bg:#fbfaf3; --bg2:#f5f7ef; --navy:#2a2a2a; --navy2:#2a2a2a; --side:#232f47;
-  --pink:#e8a24c; --pink2:#c07f2a; --pink3:#b5d04e; --pinkbg:#fae8a0; --blue:#7db8b8; --text:#4a4446;
+  --bg:#fdf8f0; --bg2:#faf6ee; --navy:#3a3a3a; --navy2:#2a2a2a; --side:#2a2a2a;
+  --pink:#e8a24c; --pink2:#d88c3a; --pink3:#7db8b8; --pinkbg:#fbf3e7; --blue:#7db8b8; --text:#3a3a3a;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{overflow-x:hidden;}
 body{
   font-family:"Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;
-  background:linear-gradient(160deg,#fbfaf3 0%,#f5f7ef 60%,#fbfaf3 100%); color:var(--text); line-height:1.9;
+  background:linear-gradient(160deg,#fbf3e7 0%,#faf6ee 60%,#fbf3e7 100%); color:var(--text); line-height:1.9;
   -webkit-font-smoothing:antialiased;
 }
 .layout{display:grid; grid-template-columns:236px 1fr; min-height:100vh;}
 
 /* ===== sidebar ===== */
-.side{background:var(--navy2); color:#e7e1d3; padding:26px 0 18px; display:flex; flex-direction:column;}
+.side{background:var(--navy2); color:#d9d0bd; padding:26px 0 18px; display:flex; flex-direction:column;}
 .slogo{padding:0 24px 22px;}
-.slogo .m{font-size:24px; font-weight:800; letter-spacing:.14em; color:#7db8b8;}
-.slogo .l{font-size:11px; color:#aebccb; letter-spacing:.18em; margin-top:2px;}
+.slogo .m{font-size:24px; font-weight:800; letter-spacing:.14em; color:#e8a24c;}
+.slogo .l{font-size:14px; color:#b3aa9a; letter-spacing:.18em; margin-top:2px;}
 .nav{flex:1;}
-.ni{display:flex; align-items:center; gap:12px; padding:13px 24px; font-size:13px; font-weight:700; color:#c3cfdc; cursor:pointer; position:relative;}
+.ni{display:flex; align-items:center; gap:12px; padding:13px 24px; font-size:14px; font-weight:700; color:#d0c6b2; cursor:pointer; position:relative;}
 .ni svg{width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none;}
-.ni.on{background:linear-gradient(90deg,#8a7a3a,#8d5a6b); color:#fff;}
-.ni .bdg{margin-left:auto; background:var(--pink); color:#fff; font-size:10.5px; font-weight:800; border-radius:999px; padding:1px 8px;}
+.ni.on{background:linear-gradient(90deg,#a8712a,#8a6a3a); color:#ffffff;}
+.ni .bdg{margin-left:auto; background:var(--pink); color:#ffffff; font-size:14px; font-weight:800; border-radius:999px; padding:1px 8px;}
 .sprof{margin-top:14px; padding:16px 20px 0; border-top:1px solid rgba(255,255,255,.1); display:flex; gap:10px; align-items:flex-start;}
-.sprof img{width:44px; height:44px; border-radius:50%; object-fit:cover; object-position:50% 6%; background:#f6f3e6; flex:none;}
-.sprof .nm{font-size:13px; font-weight:800; color:#fff;}
-.sprof .rl{font-size:9.5px; color:#aebccb; line-height:1.6;}
-.sprof .mt{font-size:9.5px; color:#f0d79a; margin-top:4px; line-height:1.7;}
+.sprof img{width:44px; height:44px; border-radius:50%; object-fit:cover; object-position:50% 6%; background:#fbf3e7; flex:none;}
+.sprof .nm{font-size:14px; font-weight:800; color:#ffffff;}
+.sprof .rl{font-size:14px; color:#b3aa9a; line-height:1.6;}
+.sprof .mt{font-size:14px; color:#f2d9a8; margin-top:4px; line-height:1.7;}
 
 /* ===== main ===== */
 .main{padding:0 0 60px;}
 .hero{position:relative; padding:34px 36px 8px; overflow:hidden;}
-.eyebrow{font-size:11px; color:var(--pink2); font-weight:800; letter-spacing:.28em;}
+.eyebrow{font-size:14px; color:var(--pink2); font-weight:800; letter-spacing:.28em;}
 .hero h1{font-size:clamp(26px,3.4vw,38px); color:var(--navy2); letter-spacing:.04em; margin-top:4px;}
-.hero .sub{font-size:13px; margin-top:6px; max-width:520px;}
+.hero .sub{font-size:14px; margin-top:6px; max-width:520px;}
 .hero .char{position:absolute; right:220px; top:10px; width:170px;}
-.hero .script{position:absolute; right:40px; top:44px; color:#cf9a3f; font-weight:800; font-size:15px; letter-spacing:.14em; line-height:2.1; transform:rotate(-3deg); text-align:center;}
+.hero .script{position:absolute; right:40px; top:44px; color:#d88c3a; font-weight:800; font-size:15px; letter-spacing:.14em; line-height:2.1; transform:rotate(-3deg); text-align:center;}
 .hero .spark{position:absolute; color:#e8c48b; font-size:18px;}
 .cols{display:grid; grid-template-columns:1fr 300px; gap:20px; padding:18px 36px 0; align-items:start;}
 
 /* url card */
-.card{background:#fff; border-radius:20px; padding:22px 24px; box-shadow:0 10px 30px rgba(38,64,95,.08);}
+.card{background:#ffffff; border-radius:20px; padding:22px 24px; box-shadow:0 10px 30px rgba(38,64,95,.08);}
 .card .chead{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;}
 .card h2{font-size:16px; color:var(--navy2);}
-.card .links a{font-size:11.5px; color:var(--navy); font-weight:800; margin-left:14px;}
+.card .links a{font-size:14px; color:var(--navy); font-weight:800; margin-left:14px;}
 .frow{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px;}
-label{display:block; font-size:12px; font-weight:800; color:var(--navy); margin-bottom:6px;}
-input[type=text]{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; padding:11px 14px; font-size:14px; font-weight:700; color:var(--navy2); background:#fbfcfe; font-family:inherit;}
+label{display:block; font-size:14px; font-weight:800; color:var(--navy); margin-bottom:6px;}
+input[type=text]{width:100%; border:1.5px solid #e8e1d3; border-radius:12px; padding:11px 14px; font-size:14px; font-weight:700; color:var(--navy2); background:#fdfaf4; font-family:inherit;}
 .mode{margin-top:14px;}
 .chips{display:flex; gap:10px;}
-.chip{border:1.5px solid #e3e9f0; background:#fff; color:var(--navy); border-radius:999px; padding:8px 22px; font-size:12.5px; font-weight:800; cursor:pointer; user-select:none;}
-.chip.on{background:linear-gradient(135deg,var(--pink3),var(--pink)); border-color:transparent; color:#fff;}
+.chip{border:1.5px solid #e8e1d3; background:#ffffff; color:var(--navy); border-radius:999px; padding:8px 22px; font-size:14px; font-weight:800; cursor:pointer; user-select:none;}
+.chip.on{background:linear-gradient(135deg,var(--pink3),var(--pink)); border-color:transparent; color:#ffffff;}
 .gbtn{
   display:flex; align-items:center; justify-content:center; gap:8px; width:100%; border:none; margin-top:16px;
-  background:linear-gradient(135deg,var(--pink3),var(--pink)); color:#fff;
+  background:linear-gradient(135deg,var(--pink3),var(--pink)); color:#ffffff;
   border-radius:999px; padding:14px; font-size:15px; font-weight:800; letter-spacing:.08em;
   box-shadow:0 8px 22px rgba(189,120,134,.35); cursor:pointer; font-family:inherit;
 }
-.gbtn svg{width:16px; height:16px; fill:#fff;}
-.note{font-size:11px; color:#9aa7b4; margin-top:10px;}
-.urlbox{display:none; margin-top:12px; background:var(--bg2); border-radius:12px; padding:11px 14px; font-size:12px; word-break:break-all; color:var(--navy2); font-weight:700;}
+.gbtn svg{width:16px; height:16px; fill:#ffffff;}
+.note{font-size:14px; color:#a89e93; margin-top:10px;}
+.urlbox{display:none; margin-top:12px; background:var(--bg2); border-radius:12px; padding:11px 14px; font-size:14px; word-break:break-all; color:var(--navy2); font-weight:700;}
 
 /* hitokoto */
-.hito{background:linear-gradient(165deg,#fae8a0,#f3ecd4); border-radius:20px; padding:20px 18px; text-align:center; box-shadow:0 10px 30px rgba(189,120,134,.14); position:relative;}
+.hito{background:linear-gradient(165deg,#fbf3e7,#fbf3e7); border-radius:20px; padding:20px 18px; text-align:center; box-shadow:0 10px 30px rgba(189,120,134,.14); position:relative;}
 .hito h3{font-size:14px; color:var(--pink3); letter-spacing:.06em;}
-.hito h3::before{content:"✦ "; color:#e8c48b;}
 .hito img{width:118px; margin:10px auto 8px; display:block;}
-.hito p{font-size:12.5px; font-weight:700; color:#7c5560; line-height:2; text-align:center;}
+.hito p{font-size:14px; font-weight:700; color:#6e655a; line-height:2; text-align:center;}
 
 /* inbox */
 .inboxwrap{padding:24px 36px 0;}
 .ihead{display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
 .ihead h2{font-size:17px; color:var(--navy2);}
-.ihead .cnt{font-size:12px; color:var(--pink2); font-weight:800;}
-.ihead .rl{margin-left:auto; border:1.5px solid #e3e9f0; background:#fff; border-radius:999px; padding:8px 20px; font-size:12px; font-weight:800; color:var(--navy); cursor:pointer; font-family:inherit;}
-.ilist{background:#fff; border-radius:20px; box-shadow:0 10px 30px rgba(38,64,95,.08); margin-top:12px; overflow:hidden;}
-.item{display:flex; gap:16px; padding:18px 22px; border-top:1px solid #f0f2f6; align-items:flex-start;}
+.ihead .cnt{font-size:14px; color:var(--pink2); font-weight:800;}
+.ihead .rl{margin-left:auto; border:1.5px solid #e8e1d3; background:#ffffff; border-radius:999px; padding:8px 20px; font-size:14px; font-weight:800; color:var(--navy); cursor:pointer; font-family:inherit;}
+.ilist{background:#ffffff; border-radius:20px; box-shadow:0 10px 30px rgba(38,64,95,.08); margin-top:12px; overflow:hidden;}
+.item{display:flex; gap:16px; padding:18px 22px; border-top:1px solid #f3eee4; align-items:flex-start;}
 .item:first-child{border-top:none;}
 .ava{flex:none; width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
-.ava svg{width:22px; height:22px; fill:#fff;}
-.a1{background:linear-gradient(135deg,#e9a0b4,#d67d95);} .a2{background:linear-gradient(135deg,#b39ddb,#9575cd);}
-.a3{background:linear-gradient(135deg,#90bfe0,#6d9fc7);} .a4{background:linear-gradient(135deg,#f0cc7f,#e0b25c);}
+.ava svg{width:22px; height:22px; fill:#ffffff;}
+.a1{background:linear-gradient(135deg,#e8a24c,#d88c3a);} .a2{background:linear-gradient(135deg,#d9b56a,#c9862f);}
+.a3{background:linear-gradient(135deg,#9ccaca,#6aa7a7);} .a4{background:linear-gradient(135deg,#f0cc7f,#e0b25c);}
 .icol{flex:none; width:88px;}
 .icol .nm{font-size:14.5px; font-weight:800; color:var(--navy2);}
-.icol .id{font-size:10px; color:#9aa7b4; font-weight:700;}
-.mood{display:inline-block; background:var(--pinkbg); color:var(--pink2); border-radius:8px; padding:1px 9px; font-size:10px; font-weight:800; margin-top:4px;}
+.icol .id{font-size:14px; color:#a89e93; font-weight:700;}
+.mood{display:inline-block; background:var(--pinkbg); color:var(--pink2); border-radius:8px; padding:1px 9px; font-size:14px; font-weight:800; margin-top:4px;}
 .reply{margin-top:10px; width:100%;}
-.reply textarea{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; padding:10px 12px; font-size:13px; line-height:1.8; color:var(--navy2); background:#fbfcfe; font-family:inherit; min-height:76px; resize:vertical;}
-.reply .sbtn{border:none; background:linear-gradient(135deg,var(--pink3),var(--pink)); color:#fff; border-radius:999px; padding:9px 22px; font-size:12px; font-weight:800; cursor:pointer; font-family:inherit; margin-top:8px;}
-.reply .sentok{display:none; font-size:11.5px; color:var(--pink2); font-weight:800; margin-top:6px;}
-.advsent{margin-top:8px; background:var(--bg2); border-radius:12px; padding:9px 12px; font-size:11.5px; white-space:pre-line; width:100%;}
+.reply textarea{width:100%; border:1.5px solid #e8e1d3; border-radius:12px; padding:10px 12px; font-size:14px; line-height:1.8; color:var(--navy2); background:#fdfaf4; font-family:inherit; min-height:76px; resize:vertical;}
+.reply .sbtn{border:none; background:linear-gradient(135deg,var(--pink3),var(--pink)); color:#ffffff; border-radius:999px; padding:9px 22px; font-size:14px; font-weight:800; cursor:pointer; font-family:inherit; margin-top:8px;}
+.reply .sentok{display:none; font-size:14px; color:var(--pink2); font-weight:800; margin-top:6px;}
+.advsent{margin-top:8px; background:var(--bg2); border-radius:12px; padding:9px 12px; font-size:14px; white-space:pre-line; width:100%;}
 .advsent b{color:var(--pink2);}
-.subbtn{border:1.5px solid #e3e9f0; background:#fff; color:var(--navy); border-radius:999px; padding:9px 18px; font-size:12px; font-weight:800; cursor:pointer; font-family:inherit; margin-top:10px; margin-right:8px;}
-.empty2{text-align:center; font-size:12.5px; color:#9aa7b4; padding:26px 0;}
+.subbtn{border:1.5px solid #e8e1d3; background:#ffffff; color:var(--navy); border-radius:999px; padding:9px 18px; font-size:14px; font-weight:800; cursor:pointer; font-family:inherit; margin-top:10px; margin-right:8px;}
+.empty2{text-align:center; font-size:14px; color:#a89e93; padding:26px 0;}
 .kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:16px;}
 .kpi{background:var(--bg2); border-radius:14px; padding:12px 8px; text-align:center;}
 .kpi .v{font-size:20px; font-weight:800; color:var(--navy2);}
-.kpi .v small{font-size:11px; font-weight:700;}
-.kpi .l{font-size:10px; color:#8a97a5; font-weight:800;}
+.kpi .v small{font-size:14px; font-weight:700;}
+.kpi .l{font-size:14px; color:#8f8577; font-weight:800;}
 .kpi.warn{background:var(--pinkbg);}
 .kpi.warn .v{color:var(--pink3);}
-.th4{font-size:13px; color:var(--navy2); font-weight:800; margin:16px 0 6px;}
-.th4::before{content:"✦ "; color:#e8c48b;}
-.brow{display:grid; grid-template-columns:150px 1fr 40px; gap:10px; align-items:center; margin-top:8px; font-size:12px;}
+.th4{font-size:14px; color:var(--navy2); font-weight:800; margin:16px 0 6px;}
+.brow{display:grid; grid-template-columns:150px 1fr 40px; gap:10px; align-items:center; margin-top:8px; font-size:14px;}
 .brow .bl{font-weight:800; color:var(--navy); line-height:1.5;}
-.brow .btrack{display:block; background:#eef2f6; border-radius:999px; height:12px; overflow:hidden;}
+.brow .btrack{display:block; background:#f6f1e7; border-radius:999px; height:12px; overflow:hidden;}
 .brow .bfill{display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,var(--blue),var(--pink));}
-.brow .bv{font-weight:800; color:#8a97a5; text-align:right; font-size:11px;}
+.brow .bv{font-weight:800; color:#8f8577; text-align:right; font-size:14px;}
 @media(max-width:900px){ .kpis{grid-template-columns:repeat(2,1fr);} .brow{grid-template-columns:104px 1fr 34px;} }
 .ibody{flex:1; min-width:0;}
-.ibody .tx{font-size:13.5px; color:var(--text);}
-.ibody .wt{font-size:11.5px; color:#9aa7b4; margin-top:2px;}
+.ibody .tx{font-size:14px; color:var(--text);}
+.ibody .wt{font-size:14px; color:#a89e93; margin-top:2px;}
 .iright{flex:none; text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:10px;}
-.iright .dt{font-size:11px; color:#8a97a5; font-weight:700;}
-.advpill{background:var(--pinkbg); color:var(--pink2); border-radius:999px; padding:5px 14px; font-size:11px; font-weight:800; white-space:nowrap;}
+.iright .dt{font-size:14px; color:#8f8577; font-weight:700;}
+.advpill{background:var(--pinkbg); color:var(--pink2); border-radius:999px; padding:5px 14px; font-size:14px; font-weight:800; white-space:nowrap;}
 
 /* mobile */
 .mtop{display:none;}
@@ -127,12 +126,12 @@ input[type=text]{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; pad
 @media(max-width:900px){
   .layout{grid-template-columns:1fr;}
   .side{display:none;}
-  .mtop{display:flex; background:var(--navy2); color:#fff; padding:14px 18px 10px; align-items:center; gap:10px; position:relative;}
-  .mtop .t .m{font-size:15px; font-weight:800; letter-spacing:.1em; color:#7db8b8;}
-  .mtop .t .m small{color:#e7e1d3; font-size:10px; letter-spacing:.14em; margin-left:4px;}
+  .mtop{display:flex; background:var(--navy2); color:#ffffff; padding:14px 18px 10px; align-items:center; gap:10px; position:relative;}
+  .mtop .t .m{font-size:15px; font-weight:800; letter-spacing:.1em; color:#e8a24c;}
+  .mtop .t .m small{color:#d9d0bd; font-size:14px; letter-spacing:.14em; margin-left:4px;}
   .mtop .t .h{font-size:16px; font-weight:800;}
   .mtop img{width:64px; margin-left:auto;}
-  .mtop .burger{position:absolute; right:14px; top:12px; color:#e7e1d3; font-size:20px; font-weight:800;}
+  .mtop .burger{position:absolute; right:14px; top:12px; color:#d9d0bd; font-size:20px; font-weight:800;}
   .hero{padding:22px 18px 4px;}
   .hero .char,.hero .script{display:none;}
   .cols{grid-template-columns:1fr; padding:14px 18px 0;}
@@ -141,24 +140,28 @@ input[type=text]{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; pad
   .item{flex-wrap:wrap;}
   .icol{width:auto;}
   .iright{flex-direction:row; width:100%; justify-content:space-between; align-items:center;}
-  .mnav{display:flex; position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:1px solid #eee; justify-content:space-around; padding:8px 4px calc(8px + env(safe-area-inset-bottom)); z-index:30;}
-  .mn{text-align:center; font-size:9.5px; font-weight:800; color:#9aa7b4; position:relative;}
-  .mn svg{width:20px; height:20px; display:block; margin:0 auto 2px; fill:none; stroke:#9aa7b4; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+  .mnav{display:flex; position:fixed; bottom:0; left:0; right:0; background:#ffffff; border-top:1px solid #eeeeee; justify-content:space-around; padding:8px 4px calc(8px + env(safe-area-inset-bottom)); z-index:30;}
+  .mn{text-align:center; font-size:14px; font-weight:800; color:#a89e93; position:relative;}
+  .mn svg{width:20px; height:20px; display:block; margin:0 auto 2px; fill:none; stroke:#a89e93; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
   .mn.on{color:var(--pink2);} .mn.on svg{stroke:var(--pink2);}
-  .mn .b{position:absolute; top:-4px; right:2px; background:var(--pink); color:#fff; border-radius:999px; font-size:8.5px; padding:0 5px; font-weight:800;}
+  .mn .b{position:absolute; top:-4px; right:2px; background:var(--pink); color:#ffffff; border-radius:999px; font-size:14px; padding:0 5px; font-weight:800;}
 }
-.mockband{background:var(--navy2); color:#e7e1d3; text-align:center; font-size:11px; padding:5px 10px; letter-spacing:.08em;}
+.mockband{background:var(--navy2); color:#d9d0bd; text-align:center; font-size:14px; padding:5px 10px; letter-spacing:.08em;}
 </style>
+<script src="labo_config.js"></script>
+<link rel="stylesheet" href="ui-refined.css?v=20260909-icons">
+<link rel="stylesheet" href="ui-atelier.css?v=20260909-atelier">
 </head>
-<body>
+<body class="atelier page-kanri">
+<a class="ui-skip" href="#main-content">本文へ進む</a>
 <div id="demoband" class="mockband" style="display:none;">デモ表示（ダミーデータ）</div>
 
 <div class="mtop">
   <div class="t">
-    <div class="m"><small>AI活用ラボ</small></div>
-    <div class="h">AIカルテ 管理者ボード</div>
+    <div class="m"><small><span data-cfg="labo_name">AI活用ラボ</span></small></div>
+    <div class="h">運営者ページ</div>
   </div>
-  <img src="assets/fm-suit.png" alt="" onerror="this.style.display='none'">
+  <img src="assets/fm-desk.png" alt="famm講師" onerror="this.style.display='none'">
   <span class="burger">≡</span>
 </div>
 
@@ -166,36 +169,43 @@ input[type=text]{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; pad
 
   <!-- sidebar -->
   <aside class="side">
-    <div class="slogo"><div class="m"></div><div class="l">AI活用ラボ</div></div>
+    <div class="slogo"><div class="m"></div><div class="l"><span data-cfg="labo_name">AI活用ラボ</span></div></div>
     <nav class="nav">
-      <div class="ni on"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>ダッシュボード</div>
-      <div class="ni"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>カルテ受信ボックス<span class="bdg">4</span></div>
-      <div class="ni"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>アドバイス管理</div>
-      <div class="ni"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>テンプレート管理</div>
-      <div class="ni"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M15.5 14.7c2.9.2 5 1.9 5.6 4.8"/></svg>ユーザー管理</div>
-      <div class="ni"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M21 20H3"/></svg>分析レポート</div>
-      <div class="ni"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M18.5 5.5l-2.1 2.1M7.6 16.4l-2.1 2.1"/></svg>設定</div>
+      <div class="ni on">ダッシュボード</div>
+      <div class="ni">カルテ受信ボックス<span class="bdg">4</span></div>
+      <div class="ni">アドバイス管理</div>
+      <div class="ni">カリキュラム進捗</div>
+      <div class="ni">ユーザー管理</div>
+      <div class="ni">分析レポート</div>
+      <div class="ni">設定</div>
     </nav>
     <div class="sprof">
       <img src="assets/fm-desk.png" alt="" onerror="this.style.display='none'">
       <div>
-        <div class="nm">famm</div>
-        <div class="rl">代表<br>ウェルビーイングプランナー</div>
-        <div class="mt">女性の可能性を信じて、<br>一緒に未来をつくろう♡</div>
+        <div class="nm">famm講師</div>
+        <div class="rl">Famm Webデザイナー講座</div>
+        <div class="mt">そのこだわりが、<br>しごとになる。</div>
       </div>
     </div>
   </aside>
 
   <!-- main -->
-  <main class="main">
+  <main class="main" id="main-content">
     <div class="hero">
-      <span class="spark" style="left:46%; top:26px;">✦</span>
-      <span class="spark" style="right:200px; top:120px; font-size:12px;">✦</span>
-      <div class="eyebrow">AI活用ラボ</div>
+      <div class="eyebrow"><span data-cfg="labo_name">AI活用ラボ</span></div>
       <h1>AIカルテ 管理者ボード</h1>
-      <p class="sub">AIがあなたの代わりに、相談者に寄り添いアドバイスをお届けします。</p>
+      <p class="sub">下書きを読んで、必要ならひとこと編集。最後に「承認して送信」で届けましょう。</p>
+<nav class="ui-tasknav" aria-label="管理メニュー"><a href="#sec-inbox">下書きを確認</a><a href="#sec-progress">学習の進捗</a><a href="#sec-invite">参加者を招待</a><a href="#sec-notice">お知らせを送る</a></nav>
       <img class="char" src="assets/fm-desk.png" alt="" onerror="this.style.display='none'">
-      <div class="script">今日も一緒に<br>がんばろうね♪♡</div>
+      <div class="script">今日も一緒に<br>がんばろうね</div>
+    </div>
+
+    <div class="inboxwrap" id="sec-inbox">
+      <div class="ihead">
+        <h2>カルテ受信ボックス</h2><span class="cnt">全4件</span>
+        <div class="inbox-tools"><button class="rl" id="doneToggle">回答済みを表示</button><button class="rl" id="inboxRefresh">更新</button><details class="inbox-more"><summary>書き出す</summary><div><button class="rl" id="csvbtn">CSVでダウンロード</button><button class="rl" id="bakbtn">全データを保存</button></div></details></div>
+      </div>
+      <div class="ilist" id="ilist"><div class="empty2">読み込み中…</div></div>
     </div>
 
     <div class="cols" id="sec-invite">
@@ -204,18 +214,18 @@ input[type=text]{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; pad
           <h2>参加者の招待（自動発行）</h2>
           <div class="links"><a href="index.html?demo=1&name=%E3%83%87%E3%83%A2" target="_blank">マイページのデモ</a><a href="setup.html" target="_blank">初期設定</a></div>
         </div>
-        <p style="font-size:12.5px; margin-top:8px;">参加者は下の入口URLから<b>自分で専用ページを作ります</b>（名前＋申込メール）。fammの作業は、案内文を一度オープンチャットに貼るだけです。</p>
+        <p style="font-size:14px; margin-top:8px;">参加者は下の入口URLから<b>自分で専用ページを作ります</b>（名前＋申込メール）。famm講師の作業は、案内文を一度オープンチャットに貼るだけです。</p>
         <div class="urlbox" style="display:block;" id="starturl"></div>
-        <button class="gbtn" id="copystart" style="margin-top:12px;"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>全員向けの案内文をコピー</button>
+        <button class="gbtn" id="copystart" style="margin-top:12px;">全員向けの案内文をコピー</button>
         <div style="margin-top:4px;">
           <button class="subbtn" id="copystarturl">入口URLだけコピー</button>
           <a class="subbtn" href="start.html" target="_blank" style="text-decoration:none; display:inline-block;">入口を開いて確認</a>
         </div>
         <details style="margin-top:14px; background:var(--bg2); border-radius:14px; padding:2px 14px 10px;">
-          <summary style="font-size:12.5px; font-weight:800; color:var(--navy); cursor:pointer; padding:10px 0 6px;">個別にURLを発行する（例外対応用）</summary>
+          <summary style="font-size:14px; font-weight:800; color:var(--navy); cursor:pointer; padding:10px 0 6px;">個別にURLを発行する（例外対応用）</summary>
           <div class="frow">
-            <div><label>ID（英数字）</label><input type="text" id="gid" placeholder="例）yuki01"></div>
-            <div><label>表示名</label><input type="text" id="gname" placeholder="例）ゆき"></div>
+            <div><label for="gid">ID（英数字）</label><input type="text" id="gid" placeholder="例）yuki01"></div>
+            <div><label for="gname">表示名</label><input type="text" id="gname" placeholder="例）ゆき"></div>
           </div>
           <div class="mode">
             <label>モード</label>
@@ -224,7 +234,7 @@ input[type=text]{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; pad
               <span class="chip">体験デモ用</span>
             </div>
           </div>
-          <button class="gbtn" id="gen" style="margin-top:12px;"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>URLを発行</button>
+          <button class="gbtn" id="gen" style="margin-top:12px;">URLを発行</button>
           <div class="urlbox" id="genurl"></div>
           <div id="genbtns" style="display:none;">
             <button class="subbtn" id="copyurl">URLをコピー</button>
@@ -236,47 +246,39 @@ input[type=text]{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; pad
       </div>
 
       <div class="hito">
-        <h3>fammからのひとこと</h3>
+        <h3>famm講師からのひとこと</h3>
         <img src="assets/fm-suit.png" alt="" onerror="this.style.display='none'">
-        <p>AIが24時間<br>あなたの代わりに<br>寄り添ってくれるよ♡<br><br>相談者がもっと<br>安心できる環境を<br>一緒につくろう！</p>
+        <p>AIが24時間<br>あなたの代わりに<br>寄り添ってくれるよ<br><br>相談者がもっと<br>安心できる環境を<br>一緒につくろう！</p>
       </div>
     </div>
 
     <div class="inboxwrap" id="sec-notice">
       <div class="ihead"><h2>みんなへのメッセージ</h2><span class="cnt" id="ntcnt"></span></div>
       <div style="padding:6px 22px 18px;">
-        <p style="font-size:12.5px; color:#8a97a5;">送ると、全員のカルテページを次に開いた時に、かわいい演出つきで表示されます（1人1回だけ）。</p>
-        <textarea id="ntbody" placeholder="みんなへのメッセージ（例：開講のごあいさつ、今週のひとこと）" style="width:100%; border:1.5px solid #e3e9f0; border-radius:12px; padding:11px 13px; font-size:14px; line-height:1.9; font-family:inherit; min-height:90px; margin-top:6px;"></textarea>
+        <p style="font-size:14px; color:#8f8577;">送ると、全員のカルテページを次に開いた時に、かわいい演出つきで表示されます（1人1回だけ）。</p>
+        <textarea id="ntbody" aria-label="みんなへのメッセージ" placeholder="みんなへのメッセージ（例：開講のごあいさつ、今週のひとこと）" style="width:100%; border:1.5px solid #e8e1d3; border-radius:12px; padding:11px 13px; font-size:14px; line-height:1.9; font-family:inherit; min-height:90px; margin-top:6px;"></textarea>
         <button class="subbtn" id="ntsend" style="margin-top:8px;">みんなに送る</button>
-        <span id="ntok" style="display:none; font-size:12.5px; color:var(--pink3); font-weight:800; margin-left:10px;">送信しました。次にページを開いた人から表示されます。</span>
-        <div id="ntlist" style="margin-top:12px; font-size:12.5px; color:#8a97a5;"></div>
+        <span id="ntok" style="display:none; font-size:14px; color:var(--pink3); font-weight:800; margin-left:10px;">送信しました。次にページを開いた人から表示されます。</span>
+        <div id="ntlist" style="margin-top:12px; font-size:14px; color:#8f8577;"></div>
       </div>
-    </div>
-
-    <div class="inboxwrap" id="sec-inbox">
-      <div class="ihead">
-        <h2>カルテ受信ボックス</h2><span class="cnt">全4件</span>
-        <button class="rl" id="doneToggle" style="margin-left:auto;">回答済みを表示</button><button class="rl" id="csvbtn" style="margin-left:8px;">CSVでダウンロード</button><button class="rl" id="bakbtn" style="margin-left:8px;">全データを保存</button><button class="rl" style="margin-left:8px;">⟳ 最新に更新</button>
-      </div>
-      <div class="ilist" id="ilist"><div class="empty2">読み込み中…</div></div>
     </div>
 
     <div class="inboxwrap" id="sec-progress">
-      <div class="ihead"><h2>📚 カリキュラムの進捗</h2><span class="cnt" id="prgcnt"></span></div>
+      <div class="ihead"><h2>カリキュラムの進捗</h2><span class="cnt" id="prgcnt"></span></div>
       <div style="padding:6px 22px 18px;">
         <div id="prgtop" style="display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin-top:6px;">
           <div style="position:relative; width:92px; height:92px; flex:none;">
             <svg width="92" height="92" viewBox="0 0 42 42">
-              <circle cx="21" cy="21" r="15.9" fill="none" stroke="#f2f5e6" stroke-width="5"/>
-              <circle id="prgArc" cx="21" cy="21" r="15.9" fill="none" stroke="#c07f2a" stroke-width="5" stroke-linecap="round" stroke-dasharray="0 100" stroke-dashoffset="25"/>
+              <circle cx="21" cy="21" r="15.9" fill="none" stroke="#f6f1e7" stroke-width="5"/>
+              <circle id="prgArc" cx="21" cy="21" r="15.9" fill="none" stroke="#d88c3a" stroke-width="5" stroke-linecap="round" stroke-dasharray="0 100" stroke-dashoffset="25"/>
             </svg>
-            <div id="prgPct" style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:800; color:#2a2a2a; font-size:17px;">–<span style="font-size:9.5px; color:#8a97a5;">全体進捗</span></div>
+            <div id="prgPct" style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:800; color:#3a3a3a; font-size:17px;">–<span style="font-size:14px; color:#8f8577;">全体進捗</span></div>
           </div>
-          <div style="font-size:12.5px; line-height:2;" id="prgKpi">読み込み中…</div>
+          <div style="font-size:14px; line-height:2;" id="prgKpi">読み込み中…</div>
         </div>
         <div id="prgChaps" style="margin-top:16px;"></div>
-        <div id="prgMembers" style="margin-top:14px; border-top:1px solid #f2f5e6; padding-top:10px;"></div>
-        <div id="prgOpens" style="margin-top:12px; font-size:12px; color:#8a97a5; line-height:1.9;"></div>
+        <div id="prgMembers" style="margin-top:14px; border-top:1px solid #f6f1e7; padding-top:10px;"></div>
+        <div id="prgOpens" style="margin-top:12px; font-size:14px; color:#8f8577; line-height:1.9;"></div>
       </div>
     </div>
 
@@ -288,8 +290,13 @@ input[type=text]{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; pad
     </div>
 
     <div class="inboxwrap" id="sec-members">
-      <div class="ihead" id="memhead" style="cursor:pointer;"><h2><span id="memarrow" style="display:inline-block; transition:transform .2s; margin-right:4px;">▸</span>参加者一覧</h2><span class="cnt" id="memcnt"></span><span class="cnt" style="margin-left:auto; color:#b0a3aa;">クリックで開閉</span></div>
+      <div class="ihead" id="memhead" style="cursor:pointer;"><h2><span id="memarrow" style="display:inline-block; transition:transform .2s; margin-right:4px;">▸</span>参加者一覧</h2><span class="cnt" id="memcnt"></span><span class="cnt" style="margin-left:auto; color:#a89e93;">クリックで開閉</span></div>
       <div class="ilist" style="padding:8px 22px 16px; display:none;" id="memlist"><div class="empty2">まだ登録がありません。参加者が入口ページで専用URLを作ると、ここに並びます。</div></div>
+    </div>
+
+    <div class="inboxwrap" id="sec-svy">
+      <div class="ihead"><h2>AI診断アンケートの回答</h2><span class="cnt" id="svycnt"></span></div>
+      <div class="ilist" style="padding:8px 22px 16px;" id="svylist"><div class="empty2">まだ回答はありません。survey.html?v=sanka（勉強会に参加した方）／survey.html?v=fusanka（参加しなかった方）を配ると、ここに並びます。</div></div>
     </div>
 
     <div class="inboxwrap" id="sec-bugs">
@@ -305,18 +312,58 @@ input[type=text]{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; pad
 </div>
 
 <div class="mnav">
-  <div class="mn on"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>ダッシュボード</div>
-  <div class="mn"><span class="b">4</span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>受信ボックス</div>
-  <div class="mn"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>アドバイス管理</div>
-  <div class="mn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M18.5 5.5l-2.1 2.1M7.6 16.4l-2.1 2.1"/></svg>設定</div>
+  <div class="mn on">ダッシュボード</div>
+  <div class="mn"><span class="b">4</span>受信ボックス</div>
+  <div class="mn">アドバイス管理</div>
+  <div class="mn">設定</div>
 </div>
 
 <script src="supabase_config.js"></script>
 <script>
 (function(){
+var CF=window.cfg||function(k,d){return d;};
 var P=new URLSearchParams(location.search);
 var DEMO=P.get("demo")==="1"||!(typeof SUPABASE_CONFIG!=="undefined"&&SUPABASE_CONFIG.enabled);
 if(DEMO) document.getElementById("demoband").style.display="block";
+
+/* ===== 合言葉ゲート（本番のみ。?gate=1 でデモでも表示・?logout=1 で解除）=====
+   合言葉の平文は置かず、labo_config.js の admin_pass_hash（SHA-256）と照合する。
+   通るまでこの下の処理は一切走らない（データ取得もしない）。 */
+var GATE_KEY="fmlab_admin_ok";
+var PASS_HASH=(window.LABO_CONFIG&&window.LABO_CONFIG.admin_pass_hash)||"";
+if(P.get("logout")==="1"){ try{localStorage.removeItem(GATE_KEY);}catch(e){} }
+function gateOk(){ try{ return !!PASS_HASH && localStorage.getItem(GATE_KEY)===PASS_HASH; }catch(e){ return false; } }
+function sha256hex(str){
+  if(!(window.crypto&&window.crypto.subtle)) return Promise.reject(new Error("nocrypto"));
+  return window.crypto.subtle.digest("SHA-256",new TextEncoder().encode(str)).then(function(buf){
+    return Array.prototype.map.call(new Uint8Array(buf),function(b){ return ("0"+b.toString(16)).slice(-2); }).join("");
+  });
+}
+if((!DEMO||P.get("gate")==="1") && !gateOk()){
+  var g=document.createElement("div"); g.id="gate";
+  g.innerHTML='<style>#gate{position:fixed;inset:0;z-index:9999;background:linear-gradient(168deg,#f5ecd9 0%,#fdfaf4 46%,#fbf3e7 100%);display:flex;align-items:center;justify-content:center;padding:24px;font-family:"Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;}#gate .bx{background:#ffffff;border-radius:22px;padding:28px 24px;max-width:360px;width:100%;text-align:center;box-shadow:0 12px 34px rgba(34,48,74,.14);}#gate h3{color:#2a2a2a;font-size:16px;margin-bottom:6px;}#gate p{font-size:14px;color:#8f8577;margin-bottom:14px;line-height:1.8;}#gate input{width:100%;border:1.5px solid #e8e1d3;border-radius:12px;padding:12px 14px;font-size:16px;text-align:center;font-family:inherit;color:#2a2a2a;}#gate button{margin-top:12px;width:100%;border:none;background:linear-gradient(135deg,#7db8b8,#e8a24c);color:#ffffff;border-radius:999px;padding:13px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;}#gate .er{display:none;color:#c25b3f;font-size:14px;font-weight:800;margin-top:8px;line-height:1.7;}</style>'+
+    '<div class="bx"><h3>管理者ボード</h3><p>運営者だけが開けるページです。<br>合言葉を入れてください（このブラウザでは次回から不要です）。</p>'+
+    '<input type="password" id="gatein" aria-label="管理者の合言葉" placeholder="合言葉" autocomplete="current-password"><button id="gatebtn">開く</button><div class="er" id="gateer"></div></div>';
+  document.body.appendChild(g);
+  var gIn=document.getElementById("gatein"), gBtn=document.getElementById("gatebtn"), gEr=document.getElementById("gateer");
+  function gErr(m){ gEr.textContent=m; gEr.style.display="block"; }
+  if(!PASS_HASH){ gErr("合言葉が設定されていません（labo_config.js の admin_pass_hash）"); gBtn.disabled=true; return; }
+  function tryOpen(){
+    var v=gIn.value.trim(); if(!v) return;
+    gBtn.disabled=true;
+    sha256hex(v).then(function(h){
+      if(h===PASS_HASH){
+        try{localStorage.setItem(GATE_KEY,PASS_HASH);}catch(e){}
+        var np=new URLSearchParams(location.search); np.delete("logout");
+        var q=np.toString(); location.replace(location.pathname+(q?"?"+q:""));
+      }else{ gErr("合言葉が違います"); gBtn.disabled=false; gIn.select(); }
+    }).catch(function(){ gErr("この環境では確認できません。https のURLで開いてください"); gBtn.disabled=false; });
+  }
+  gBtn.onclick=tryOpen;
+  gIn.addEventListener("keydown",function(e){ if(e.key==="Enter") tryOpen(); });
+  setTimeout(function(){ gIn.focus(); },50);
+  return;
+}
 
 function sb(path,opts){
   return fetch(SUPABASE_CONFIG.url+"/rest/v1/"+path,Object.assign({
@@ -353,7 +400,7 @@ document.getElementById("gen").onclick=function(){
   document.getElementById("openurl").href=url;
   document.getElementById("copyurl").onclick=function(){ copy(url,this,"URLをコピー"); };
   document.getElementById("copyline").onclick=function(){
-    copy(nm+"さん\nAI活用ラボの「AIカルテ」、"+nm+"さん専用ページができました☺️\n\n▼専用URL\n"+url+"\n\nいま困っていること・感じていることを、そのまま書いて送ってください。fammが読んで、アドバイスをお返しします。",this,"LINE送付文をコピー");
+    copy(nm+"さん\n"+CF("labo_name","AI活用ラボ")+"の「AIカルテ」、"+nm+"さん専用ページができました☺️\n\n▼専用URL\n"+url+"\n\nいま困っていること・感じていることを、そのまま書いて送ってください。famm講師が読んで、アドバイスをお返しします。",this,"LINE送付文をコピー");
   };
 };
 
@@ -363,7 +410,7 @@ document.getElementById("copystarturl").onclick=function(){ copy(base()+"start.h
 
 /* 全員向け案内文 */
 document.getElementById("copystart").onclick=function(){
-  copy("【AI活用ラボ】あなた専用の「AIカルテ」ページができました☺️\n\n▼こちらから30秒で作れます\n"+base()+"start.html\n\nお名前と、お申込みのメールアドレスを入れるだけです。\n困ったこと・感じていることを書いて送ってもらえたら、\nfammが読んで、あなたに合うAIの使い方をお返しします。",this,"全員向けの案内文をコピー");
+  copy("【"+CF("labo_name","AI活用ラボ")+"】あなた専用の「AIカルテ」ページができました☺️\n\n▼こちらから30秒で作れます\n"+base()+"start.html\n\nお名前と、お申込みのメールアドレスを入れるだけです。\n困ったこと・感じていることを書いて送ってもらえたら、\nfamm講師が読んで、あなたに合うAIの使い方をお返しします。",this,"全員向けの案内文をコピー");
 };
 
 /* inbox */
@@ -438,6 +485,11 @@ function renderMembers(apps,regs,karte,advMap){
     var e=document.createElement("div"); e.className="item";
     var right="";
     if(v.app) right+='<span class="advpill" style="background:#e8f0e9; color:#3f7d63;">申込✓'+(v.rno?(" "+v.rno):"")+'</span>';
+    /* 受講期限（mood「期限」）：無ければ「期限なし」。ボタンで 3ヶ月後／+1ヶ月／無期限 を設定 */
+    var ex=(renderMembers._exp||{})[id], exd=ex?String(ex.want||""):"";
+    var left=exd?Math.ceil((new Date(exd+"T23:59:59")-Date.now())/86400000):null;
+    var exTxt=exd?(left<0?'<span class="mood" style="background:#fbe9e7; color:#b3261e; font-weight:800;">停止中（'+esc(exd)+'）</span>':'<span class="advpill" style="background:#f6f1e7; color:#4e8f8f;">期限 '+esc(exd)+'（残'+left+'日）</span>'):'<span class="advpill" style="opacity:.6;">期限なし</span>';
+    right+=exTxt+'<span class="expbtns" style="display:inline-flex; gap:4px; margin-left:4px;"><button class="rl" data-exp="3m" title="今日から3ヶ月後">3ヶ月後</button><button class="rl" data-exp="1m" title="いまの期限を1ヶ月延長（継続）">+1ヶ月</button><button class="rl" data-exp="none" title="期限を外す">無期限</button></span>';
     if(v.app&&!v.reg&&v.k===0) right+='<span class="mood" style="background:var(--pinkbg); color:var(--pink3); font-weight:800;">カルテ未開設</span>';
     else if(v.k===0) right+='<span class="mood" style="background:var(--pinkbg); color:var(--pink3);">カルテ未提出</span>';
     else right+='<span class="advpill">カルテ'+v.k+'件</span>';
@@ -448,6 +500,21 @@ function renderMembers(apps,regs,karte,advMap){
       '<div class="ibody" style="align-self:center;"><div class="wt">'+(v.app?"申込":"登録")+'：'+fmt(v.at)+'</div></div>'+
       '<div class="iright" style="display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end;">'+right+'</div>';
     box.appendChild(e);
+    Array.prototype.forEach.call(e.querySelectorAll("button[data-exp]"),function(b){
+      b.onclick=function(){
+        var kind=b.getAttribute("data-exp"), cur=(renderMembers._exp||{})[id], base=new Date();
+        if(kind==="1m"&&cur&&cur.want){ base=new Date(cur.want+"T00:00:00"); }
+        var d=new Date(base); if(kind==="3m") d.setMonth(d.getMonth()+3); if(kind==="1m") d.setMonth(d.getMonth()+1);
+        var ymd=kind==="none"?"9999-12-31":(d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2));
+        var label=kind==="none"?"無期限":(kind==="3m"?"3ヶ月の受講期間":"継続（+1ヶ月）");
+        if(!confirm(v.name+"さんの期限を「"+(kind==="none"?"無期限":ymd)+"」にします。よろしいですか？")) return;
+        b.disabled=true;
+        if(DEMO){ alert("デモ表示中です。本番では保存されます。"); b.disabled=false; return; }
+        var body=JSON.stringify({member_id:id,member_name:v.name,mood:"期限",worry:label,want:ymd});
+        var req=cur?sb("ailab_notes?id=eq."+cur.id,{method:"PATCH",body:body}):sb("ailab_notes",{method:"POST",body:body});
+        req.then(function(){ loadInbox(); }).catch(function(){ b.disabled=false; alert("保存できませんでした。"); });
+      };
+    });
   });
 }
 function renderTrend(notes,advMap){
@@ -515,6 +582,34 @@ function renderBugs(bugs){
     box.appendChild(e);
   });
 }
+function renderSvy(items,clicks){
+  var box=document.getElementById("svylist"); if(!box) return;
+  var cnt=document.getElementById("svycnt");
+  if(!items.length){ cnt.textContent=""; return; }
+  /* クリック行（mood「AI診断クリック」）を回答者ごとにまとめる：worry が「学びたい」「アーカイブ」 */
+  var ck={}; (clicks||[]).forEach(function(c){ var m=c.member_id||""; (ck[m]=ck[m]||{})[c.worry||""]=c.created_at||true; });
+  var sanka=items.filter(function(s){ return (s.member_id||"").indexOf("svy_sanka_")===0; }).length;
+  var learn=items.filter(function(s){ return ck[s.member_id]&&ck[s.member_id]["学びたい"]; }).length;
+  var arc=items.filter(function(s){ return ck[s.member_id]&&ck[s.member_id]["アーカイブ"]; }).length;
+  cnt.textContent="全"+items.length+"件（参加した方 "+sanka+"／参加しなかった方 "+(items.length-sanka)+"）　学びたい "+learn+"人／アーカイブ "+arc+"人";
+  box.innerHTML="";
+  items.forEach(function(s){
+    var r={}; try{ r=JSON.parse(s.worry||"{}")||{}; }catch(e){ r={}; }
+    var isS=(s.member_id||"").indexOf("svy_sanka_")===0;
+    var c=ck[s.member_id]||{};
+    var pills=(c["学びたい"]?'<span class="advpill" style="background:#e8f3ee; color:#3f7d63;">学びたい ✓</span>　':'')+(c["アーカイブ"]?'<span class="advpill" style="background:#f6f1e7; color:#4e8f8f;">アーカイブ ✓</span>　':'');
+    var j=function(a){ return (a&&a.length)?a.join("・"):"—"; };
+    var SU={"0":"入れていない","1":"その都度少し","2":"数百〜数千字のメモ","3":"数万字の設定"};
+    var line1='使っているAI：'+j(r.tools)+'　頻度：'+(r.freq||"—")+'　場面：'+j(r.scenes)+'　事前設定：'+(SU[String(r.setup)]||"—");
+    var line2=isS?('気になった点：'+j(r.hesitation)+(r.hesitation_other?('（'+r.hesitation_other+'）'):'')):('アーカイブ：'+(r.archive||"—"));
+    var e=document.createElement("div"); e.className="item"; e.style.flexWrap="wrap";
+    e.innerHTML='<div class="ibody"><div class="tx"><b style="color:var(--pink3);">'+esc(s.member_name||"（お名前なし）")+'</b>　<span class="advpill">'+(isS?"参加した方":"参加しなかった方")+'</span>　'+pills+(typeof r.score==="number"?(r.score+'／5点　'):'')+esc(r.type||"")+'</div>'+
+      '<div class="wt">'+esc(line1)+'</div><div class="wt">'+esc(line2)+'</div>'+
+      (s.want?'<div class="wt">解決したいこと：'+esc(s.want)+'</div>':'')+'</div>'+
+      '<div class="iright"><span class="dt">'+fmt(s.created_at)+'</span></div>';
+    box.appendChild(e);
+  });
+}
 function renderLine(items){
   var box=document.getElementById("linelist");
   var open=items.filter(function(b){ return b.mood==="LINE新着"; });
@@ -571,6 +666,8 @@ function renderInbox(notes,advMap,drafts){
   var arr=notes.slice().sort(function(a,b){
     var da=isDone(a,advMap), db=isDone(b,advMap);
     if(da!==db) return da?1:-1;
+    var ua=(/急ぎ/.test(a.mood||""))?1:0, ub=(/急ぎ/.test(b.mood||""))?1:0;   /* 急ぎは未対応の中で先頭 */
+    if(ua!==ub) return ub-ua;
     return new Date(b.created_at)-new Date(a.created_at);
   });
   if(!showDone){
@@ -588,13 +685,15 @@ function renderInbox(notes,advMap,drafts){
     var done=isDone(n,advMap);
     if(done) e.style.opacity=".55";
     e.innerHTML='<span class="ava a'+(idx%4+1)+'"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4 20c1-4 4.2-6 8-6s7 2 8 6z"/></svg></span>'+
-      '<div class="icol"><div class="nm">'+esc(n.member_name||n.member_id)+'</div><div class="id">'+esc(n.member_id)+'</div>'+(n.mood&&n.mood!=="対応済み"?'<span class="mood">'+esc(n.mood)+'</span>':'')+'</div>'+
-      '<div class="ibody"><div class="tx">'+esc(n.worry)+'</div>'+(n.want?'<div class="wt">やってみたい：'+esc(n.want)+'</div>':'')+'</div>'+
+      '<div class="icol"><div class="nm">'+esc(n.member_name||n.member_id)+'</div><div class="id">'+esc(n.member_id)+'</div>'+(String(n.member_id||"").indexOf("trial_")===0?'<span class="mood" style="background:#f6f1e7; color:#4e8f8f; font-weight:800;">モニター（お試し1回）</span>':'')+(n.mood==="急ぎ"?'<span class="mood" style="background:#fbf3e7;color:#d88c3a;font-weight:800;">🔥 急ぎ（提出前）</span>':(String(n.mood||"").indexOf("添削依頼")===0?'<span class="mood" style="background:#f6f1e7;color:#4e8f8f;font-weight:800;">🎨 デザイン添削依頼'+(/急ぎ/.test(n.mood)?'・🔥急ぎ':'')+'</span>':(n.mood&&n.mood!=="対応済み"?'<span class="mood">'+esc(n.mood)+'</span>':'')))+'</div>'+
+      '<div class="ibody"><div class="tx">'+esc(n.worry)+'</div>'+(n.want?(String(n.mood||"").indexOf("添削依頼")===0?'<div class="wt">Figma：'+esc(n.want).replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>')+'</div>':'<div class="wt">やってみたい：'+esc(n.want)+'</div>'):'')+
+        (function(){ var ims=(renderInbox._img||{})[String(n.id)]||[]; return ims.length?'<div class="wt" style="display:flex;gap:6px;flex-wrap:wrap;">'+ims.map(function(d){ return '<a href="'+d+'" target="_blank" rel="noopener"><img src="'+d+'" alt="添付画像" style="width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid #eadfce;"></a>'; }).join("")+'</div>':''; })()+
+        (function(){ var ls=(renderInbox._slog||{})[n.member_id]||[]; if(!ls.length) return ''; var t=0,c=0; ls.forEach(function(l){ try{ var v=JSON.parse(l.worry||"{}"); var d=new Date(l.want); if((Date.now()-d)/86400000<=7){ t+=(+v.dm||0); c++; } }catch(e){} }); return '<div class="wt">営業ログ：直近7日 DM '+t+'件（記録'+c+'日）</div>'; })()+'</div>'+
       '<div class="iright"><span class="dt">'+fmt(n.created_at)+'</span>'+
       (done?'<span class="advpill" style="background:#e8f3ee; color:#3f7d63;">完了</span>':'')+
       (advs.length?'<span class="advpill">'+advs.length+'件のアドバイス</span>':'')+'</div>'+
       (advs.length?'<div class="advsent"><b>直近のアドバイス</b>\n'+esc(advs[0].message)+'</div>':'')+
-      '<div class="reply"><textarea placeholder="'+esc(n.member_name||"")+'さんへのアドバイス（どんなAIとの付き合い方がよいか・どのAIが合うか・最初の一歩）"></textarea>'+
+      '<div class="reply"><textarea placeholder="'+(String(n.mood||"").indexOf("添削依頼")===0?esc(n.member_name||"")+'さんへ：添削したFigmaのURLと、直した点・良かった点のコメント':esc(n.member_name||"")+'さんへのアドバイス（どんなAIとの付き合い方がよいか・どのAIが合うか・最初の一歩）')+'"></textarea>'+
       '<button class="sbtn">アドバイスを送る</button><div class="sentok">送信しました。本人のページと分析に反映されます。</div></div>';
     var ta=e.querySelector("textarea"), sbtn=e.querySelector(".sbtn"), okm=e.querySelector(".sentok");
     var dft=(!done && drafts[n.member_id])||null;
@@ -602,7 +701,7 @@ function renderInbox(notes,advMap,drafts){
       ta.value=dft.message||"";
       sbtn.textContent="承認して送信";
       var dbg=document.createElement("span"); dbg.className="advpill";
-      dbg.style.cssText="background:#eef2fb; color:#3b5b9a; margin-left:10px;";
+      dbg.style.cssText="background:#f6f1e7; color:#4e8f8f; margin-left:10px;";
       dbg.textContent="AI下書き（編集できます）";
       sbtn.parentNode.insertBefore(dbg, sbtn.nextSibling);
     }
@@ -620,7 +719,7 @@ function renderInbox(notes,advMap,drafts){
       }
       function done(){ okm.style.display="block"; ta.value=""; sbtn.disabled=false; markDone(); setTimeout(function(){okm.style.display="none";},3000); }
       if(DEMO){ done(); return; }
-      sb("ailab_advice",{method:"POST",body:JSON.stringify({target_id:n.member_id,author_name:"famm",message:msg})})
+      sb("ailab_advice",{method:"POST",body:JSON.stringify({target_id:n.member_id,author_name:"famm講師",message:msg})})
         .then(function(){
           done();
           if(n.id) sb("ailab_notes?id=eq."+n.id,{method:"PATCH",body:JSON.stringify({mood:"対応済み"})}).catch(function(){});
@@ -632,7 +731,7 @@ function renderInbox(notes,advMap,drafts){
   });
 }
 function loadInbox(){
-  if(DEMO){ lastNotesA=demoNotes.slice(); renderMembers(demoApps,demoRegs,demoNotes,demoAdv); renderInbox(demoNotes,demoAdv,demoDrafts); renderTrend(demoNotes,demoAdv); renderBugs([{id:0,member_name:"マイページ｜demo",mood:"バグ報告",worry:"（デモ）送信ボタンの反応が遅い気がします",want:"https://…／iPhone Safari",created_at:new Date().toISOString()}]); return; }
+  if(DEMO){ lastNotesA=demoNotes.slice(); renderMembers(demoApps,demoRegs,demoNotes,demoAdv); renderInbox(demoNotes,demoAdv,demoDrafts); renderTrend(demoNotes,demoAdv); renderBugs([{id:0,member_name:"マイページ｜demo",mood:"バグ報告",worry:"（デモ）送信ボタンの反応が遅い気がします",want:"https://…／iPhone Safari",created_at:new Date().toISOString()}]); renderSvy([{id:0,member_id:"svy_sanka_demo",member_name:"（デモ）ゆき",mood:"AI診断",worry:JSON.stringify({tools:["ChatGPT"],freq:"週に数回",scenes:["提案文・応募文","文章作成"],score:3,type:"使えているけれど、思い込みが1〜2つある人",hesitation:["ChatGPTと何が違うのかがわからない"],hesitation_other:""}),want:"提案文を書く時間が長くなってしまう",created_at:new Date().toISOString()}],[{member_id:"svy_sanka_demo",mood:"AI診断クリック",worry:"学びたい",created_at:new Date().toISOString()}]); return; }
   Promise.all([
     sb("ailab_notes?order=created_at.desc&limit=1000").then(function(r){return r.json();}),
     sb("ailab_advice?order=created_at.desc&limit=1000").then(function(r){return r.json();})
@@ -640,10 +739,22 @@ function loadInbox(){
     var all=Array.isArray(res[0])?res[0]:[];
     var bugs=all.filter(function(n){ return (n.member_id||"").indexOf("bug_")===0; });
     var lines=all.filter(function(n){ return (n.member_id||"").indexOf("line_")===0; });
+    var svys=all.filter(function(n){ return (n.member_id||"").indexOf("svy_")===0 && n.mood==="AI診断"; });
+    var svyClicks=all.filter(function(n){ return (n.member_id||"").indexOf("svy_")===0 && n.mood==="AI診断クリック"; });
     var rest=all.filter(function(n){ var m=(n.member_id||""); return m.indexOf("bug_")!==0 && m.indexOf("line_")!==0 && m.indexOf("svy_")!==0 && m.indexOf("notice_")!==0 && m.indexOf("read_")!==0; });
     var apps=rest.filter(function(n){ return n.mood==="申込"; });
     var regs=rest.filter(function(n){ return n.mood==="登録"; });
-    var notes=rest.filter(function(n){ return n.mood!=="登録" && n.mood!=="申込"; });
+    /* 添付画像（mood「添付画像」）と営業ログ（mood「営業ログ」）はカルテではないので分ける */
+    var IMG={}, SLOG={}, EXP={};
+    rest.forEach(function(n){
+      if(n.mood==="添付画像"){ var k=String(n.want||"").replace(/^karte:/,"").split("#")[0]; (IMG[k]=IMG[k]||[]).push(n.worry); }
+      else if(n.mood==="営業ログ"){ (SLOG[n.member_id]=SLOG[n.member_id]||[]).push(n); }
+      else if(n.mood==="期限"){ if(!EXP[n.member_id]||String(n.want||"")>String(EXP[n.member_id].want||"")) EXP[n.member_id]=n; }
+    });
+    renderMembers._exp=EXP;
+    Object.keys(IMG).forEach(function(k){ IMG[k].reverse(); });
+    renderInbox._img=IMG; renderInbox._slog=SLOG;
+    var notes=rest.filter(function(n){ return n.mood!=="登録" && n.mood!=="申込" && n.mood!=="添付画像" && n.mood!=="営業ログ" && n.mood!=="期限" && n.mood!=="応募ノート"; });
     var advMap={}, drafts={};
     (Array.isArray(res[1])?res[1]:[]).forEach(function(a){
       var an=String(a.author_name||"");
@@ -651,7 +762,7 @@ function loadInbox(){
       if(an.indexOf("draft")===0) return;
       (advMap[a.target_id]=advMap[a.target_id]||[]).push(a);
     });
-    lastNotesA=notes; renderMembers(apps,regs,notes,advMap); renderInbox(notes,advMap,drafts); renderTrend(notes,advMap); renderBugs(bugs); renderLine(lines);
+    lastNotesA=notes; renderMembers(apps,regs,notes,advMap); renderInbox(notes,advMap,drafts); renderTrend(notes,advMap); renderBugs(bugs); renderSvy(svys,svyClicks); renderLine(lines);
   }).catch(function(){
     document.getElementById("ilist").innerHTML='<div class="empty2">読み込めませんでした。初期設定（setup.html）がまだの可能性があります。</div>';
   });
@@ -663,7 +774,7 @@ var NAVMAP={
   "カルテ受信ボックス":function(){ scrollToSec("sec-inbox"); },
   "受信ボックス":function(){ scrollToSec("sec-inbox"); },
   "アドバイス管理":function(){ scrollToSec("sec-inbox"); },
-  "テンプレート管理":function(){ alert("テンプレート集は準備中です"); },
+  "カリキュラム進捗":function(){ scrollToSec("sec-progress"); },
   "ユーザー管理":function(){ scrollToSec("sec-members"); },
   "分析レポート":function(){ scrollToSec("sec-trend"); },
   "設定":function(){ window.open("setup.html","_blank"); }
@@ -675,7 +786,7 @@ document.querySelectorAll(".ni,.mn").forEach(function(n){
     n.onclick=function(){
       NAVMAP[label]();
       var group=n.classList.contains("ni")?".ni":".mn";
-      if(label!=="テンプレート管理"&&label!=="設定"){
+      if(label!=="カリキュラム進捗"&&label!=="設定"){
         document.querySelectorAll(group).forEach(function(x){x.classList.remove("on");});
         n.classList.add("on");
       }
@@ -688,7 +799,7 @@ document.getElementById("ntsend").onclick=function(){
   if(!t){ document.getElementById("ntbody").focus(); return; }
   var b=this; b.disabled=true;
   if(DEMO){ document.getElementById("ntok").style.display="inline"; b.disabled=false; return; }
-  sb("ailab_notes",{method:"POST",body:JSON.stringify({member_id:"notice_all",member_name:"famm",mood:"おしらせ",worry:t})})
+  sb("ailab_notes",{method:"POST",body:JSON.stringify({member_id:"notice_all",member_name:"famm講師",mood:"おしらせ",worry:t})})
     .then(function(){ document.getElementById("ntok").style.display="inline"; document.getElementById("ntbody").value=""; b.disabled=false; loadNotices(); })
     .catch(function(){ b.disabled=false; alert("送信できませんでした"); });
 };
@@ -765,18 +876,18 @@ function loadProgress(){
       var totalRead=0; Object.keys(byUser).forEach(function(u){ totalRead+=Object.keys(byUser[u]).length; });
       var pct = nStart ? Math.round(totalRead/(CHAPS.length*nStart)*100) : 0;
       document.getElementById("prgArc").setAttribute("stroke-dasharray", pct+" "+(100-pct));
-      document.getElementById("prgPct").innerHTML=pct+"%<span style='font-size:9.5px; color:#8a97a5;'>全体進捗</span>";
+      document.getElementById("prgPct").innerHTML=pct+"%<span style='font-size:9.5px; color:#8f8577;'>全体進捗</span>";
       document.getElementById("prgKpi").innerHTML=
-        "カリキュラムをスタート：<b style='color:#c07f2a;'>"+nStart+"名</b><br>読まれた章：のべ<b style='color:#c07f2a;'>"+totalRead+"章</b>（全"+CHAPS.length+"章×スタート人数で計算）";
+        "カリキュラムをスタート：<b style='color:#d88c3a;'>"+nStart+"名</b><br>読まれた章：のべ<b style='color:#d88c3a;'>"+totalRead+"章</b>（全"+CHAPS.length+"章×スタート人数で計算）";
       /* 章別 */
-      var chHtml="<div style='font-size:12px; font-weight:800; color:#2a2a2a; margin-bottom:4px;'>章ごとの読了人数</div>";
+      var chHtml="<div style='font-size:12px; font-weight:800; color:#3a3a3a; margin-bottom:4px;'>章ごとの読了人数</div>";
       CHAPS.forEach(function(c,i){
         var n=0; Object.keys(byUser).forEach(function(u){ if(byUser[u][c[0]]) n++; });
         var w = nStart ? Math.round(n/nStart*100) : 0;
         chHtml+="<div style='display:flex; align-items:center; gap:8px; font-size:12px; margin-top:5px;'>"
-          +"<span style='flex:none; width:150px; color:#4a4446;'>"+(i+1)+"/8　"+esc(c[1])+"</span>"
-          +"<span style='flex:1; height:9px; background:#f2f5e6; border-radius:99px; overflow:hidden;'><span style='display:block; height:100%; width:"+w+"%; background:linear-gradient(90deg,#b5d04e,#e8a24c); border-radius:99px;'></span></span>"
-          +"<span style='flex:none; width:44px; text-align:right; font-weight:800; color:#c07f2a;'>"+n+"名</span></div>";
+          +"<span style='flex:none; width:150px; color:#3a3a3a;'>"+(i+1)+"/8　"+esc(c[1])+"</span>"
+          +"<span style='flex:1; height:9px; background:#f6f1e7; border-radius:99px; overflow:hidden;'><span style='display:block; height:100%; width:"+w+"%; background:linear-gradient(90deg,#7db8b8,#e8a24c); border-radius:99px;'></span></span>"
+          +"<span style='flex:none; width:44px; text-align:right; font-weight:800; color:#d88c3a;'>"+n+"名</span></div>";
       });
       document.getElementById("prgChaps").innerHTML=chHtml;
       /* 生徒別 */
@@ -784,18 +895,18 @@ function loadProgress(){
         var n=byUser[u]?Object.keys(byUser[u]).length:0;
         return {u:u, n:n, name:names[u]||u};
       }).sort(function(a,b){ return b.n-a.n; });
-      var mHtml="<div style='font-size:12px; font-weight:800; color:#2a2a2a; margin-bottom:4px;'>生徒ごとの進み具合</div>";
-      if(!users.length){ mHtml+="<div style='font-size:12px; color:#8a97a5;'>まだ記録がありません。教科書の各章の「ここまで読んだ！」ボタンで記録されます。</div>"; }
+      var mHtml="<div style='font-size:12px; font-weight:800; color:#3a3a3a; margin-bottom:4px;'>生徒ごとの進み具合</div>";
+      if(!users.length){ mHtml+="<div style='font-size:12px; color:#8f8577;'>まだ記録がありません。教科書の各章の「ここまで読んだ！」ボタンで記録されます。</div>"; }
       users.forEach(function(x){
         var w=Math.round(x.n/CHAPS.length*100);
         mHtml+="<div style='display:flex; align-items:center; gap:8px; font-size:12px; margin-top:5px;'>"
-          +"<span style='flex:none; width:150px; color:#4a4446; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;'>"+esc(x.name)+"</span>"
-          +"<span style='flex:1; height:9px; background:#f2f5e6; border-radius:99px; overflow:hidden;'><span style='display:block; height:100%; width:"+w+"%; background:linear-gradient(90deg,#e8a24c,#c07f2a); border-radius:99px;'></span></span>"
-          +"<span style='flex:none; width:52px; text-align:right; font-weight:800; color:#2a2a2a;'>"+x.n+"/"+CHAPS.length+"章</span></div>";
+          +"<span style='flex:none; width:150px; color:#3a3a3a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;'>"+esc(x.name)+"</span>"
+          +"<span style='flex:1; height:9px; background:#f6f1e7; border-radius:99px; overflow:hidden;'><span style='display:block; height:100%; width:"+w+"%; background:linear-gradient(90deg,#e8a24c,#d88c3a); border-radius:99px;'></span></span>"
+          +"<span style='flex:none; width:52px; text-align:right; font-weight:800; color:#3a3a3a;'>"+x.n+"/"+CHAPS.length+"章</span></div>";
       });
       document.getElementById("prgMembers").innerHTML=mHtml;
       document.getElementById("prgOpens").innerHTML=
-        "💌 レターを読んだ "+Object.keys(letter).length+"名　📚 カリキュラムを開いた "+Object.keys(curOpen).length+"名　📖 教科書を開いた "+Object.keys(bookOpen).length+"名";
+        "レターを読んだ "+Object.keys(letter).length+"名 ／ カリキュラムを開いた "+Object.keys(curOpen).length+"名 ／ 教科書を開いた "+Object.keys(bookOpen).length+"名";
       var pc=document.getElementById("prgcnt"); if(pc) pc.textContent=nStart?("スタート"+nStart+"名"):"";
     }).catch(function(){ document.getElementById("prgKpi").textContent="読み込めませんでした。リロードしてください。"; });
 }
@@ -817,9 +928,11 @@ document.getElementById("bakbtn").onclick=function(){
     b.disabled=false; b.textContent="全データを保存";
   }).catch(function(){ b.disabled=false; b.textContent="全データを保存"; alert("読み込めませんでした。通信環境をご確認ください。"); });
 };
-document.querySelectorAll(".ihead .rl").forEach(function(b){ if(b.id!=="csvbtn") b.onclick=loadInbox; });
+document.getElementById("inboxRefresh").onclick=loadInbox;
 loadInbox();
 })();
 </script>
+<script src="ui-refined.js?v=20260909-icons"></script>
+<script src="ui-atelier.js?v=20260909-atelier"></script>
 </body>
 </html>
