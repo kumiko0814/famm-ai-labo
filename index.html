@@ -188,7 +188,7 @@ footer{text-align:center; font-size:14px; color:#a89e93; padding:34px 16px 10px;
 .curwk .wt b{color:var(--navy2); display:block; font-size:14px;}
 .curwk.now{background:linear-gradient(90deg,#fbf3e7,transparent); margin:0 -18px; padding:9px 18px; border-radius:8px;}
 .curwk.now .wn{color:var(--pink2);}
-/* famm講師からのメッセージ */
+/* AI fammからのメッセージ */
 #ntcOv{position:fixed; inset:0; background:rgba(29,49,73,.5); display:none; align-items:center; justify-content:center; z-index:80; padding:22px;}
 #ntcOv.on{display:flex;}
 #ntcCard{position:relative; background:linear-gradient(165deg,#ffffff 0%,#fdf8f0 100%); border:2px solid #f2d9a8; border-radius:24px; padding:26px 22px 22px; max-width:360px; width:100%; text-align:center; box-shadow:0 20px 60px rgba(29,49,73,.3); animation:ntcPop .5s cubic-bezier(.2,1.4,.4,1);}
@@ -255,13 +255,12 @@ footer{text-align:center; font-size:14px; color:#a89e93; padding:34px 16px 10px;
       <div class="ni sub on" id="ni_new" data-v="v_new">新しいカルテ</div>
       <div class="ni" data-v="v_adv">アドバイス管理</div>
       <div class="ni" data-v="v_ana">分析レポート</div>
-      <div class="ni" id="niCur" data-v="v_cur">カリキュラム</div>
       <div class="ni" data-v="v_set">設定</div>
     </nav>
     <div class="sprof">
       <img src="assets/fm-desk.png" alt="" onerror="this.style.display='none'">
       <div>
-        <div class="nm">famm講師</div>
+        <div class="nm">AI famm</div>
         <div class="rl">Famm Webデザイナー講座</div>
         <div class="mt">そのこだわりが、<br>しごとになる。</div>
       </div>
@@ -307,22 +306,20 @@ footer{text-align:center; font-size:14px; color:#a89e93; padding:34px 16px 10px;
             </div>
             <div class="q">
               <div class="qh"><b>画像を添付</b><span style="font-size:12px;color:#a89e93;">任意・3枚まで</span></div>
-              <p class="qguide">添削してほしいデザイン・バナー・LPのスクショなど。famm講師が見て、良い点と直すところをお返しします。</p>
+              <p class="qguide">相談したいデザイン・バナー・LPのスクショなど。AI fammが見て、良い点と直すところをお返しします。</p>
               <input type="file" id="imgIn" accept="image/*" multiple style="display:none">
               <button type="button" class="subbtn" id="imgBtn">画像を選ぶ</button>
               <div class="imgprev" id="imgPrev"></div>
               <label class="chk"><input type="checkbox" id="isResult"><span>前回のアドバイスを「やってみた結果」の報告です（合っていたか・どう変わったかも一緒に書いてください）</span></label>
-              <label class="chk"><input type="checkbox" id="isUrgent"><span>急ぎです（納期が近い実案件・提出前の確認）。管理者ボードで先頭に表示され、famm講師が優先して見ます</span></label>
-              <a class="subbtn" id="tensakuhref" href="tensaku.html" style="text-decoration:none; margin-top:12px;">Figmaのデザインを添削してもらう（添削依頼ページ）</a>
             </div>
             <button class="gbtn" id="send">この内容でカルテを作成する</button>
-            <div class="ok" id="okmsg">カルテが届きました。famm講師が読んで、アドバイスをお返ししますね。</div>
+            <div class="ok" id="okmsg">カルテが届きました。AI fammが読んで、アドバイスをお返ししますね。</div>
             <p class="note">※作成したカルテはいつでも編集・追加できます。</p>
           </div>
 
           <div class="card" id="slogCard">
             <h2>今日の営業ログ</h2>
-            <p class="qguide">毎日の数を残すと、famm講師の返信に「数字」が入ります。続かない日も0で記録して大丈夫です。</p>
+            <p class="qguide">毎日の数を残すと、AI fammの返信に「数字」が入ります。続かない日も0で記録して大丈夫です。</p>
             <div class="slog">
               <div><label>DM・営業した数</label><input type="number" id="slDm" min="0" max="999" inputmode="numeric" placeholder="0"></div>
               <div><label>応募・提案した数</label><input type="number" id="slAp" min="0" max="999" inputmode="numeric" placeholder="0"></div>
@@ -330,23 +327,12 @@ footer{text-align:center; font-size:14px; color:#a89e93; padding:34px 16px 10px;
             </div>
             <textarea class="slogmemo" id="slMemo" maxlength="200" placeholder="ひとこと（任意）例）制作が入って午後は動けなかった"></textarea>
             <button class="gbtn" id="slSave" style="margin-top:12px;">今日の分を記録する</button>
-            <div class="ok" id="slOk">記録しました。famm講師にも共有されます。</div>
+            <div class="ok" id="slOk">記録しました。AI fammの返信に反映されます。</div>
             <div class="sbars" id="slBars"></div>
             <div class="sstat"><span>直近7日のDM <b id="slW">0</b></span><span>連続 <b id="slStreak">0</b>日</span><span>今月のDM <b id="slM">0</b></span></div>
             <button type="button" class="subbtn" id="slIcs">毎朝8時のリマインドをカレンダーに入れる</button>
             <a class="subbtn" id="oubohref" href="oubo.html" style="text-decoration:none; margin-left:8px;">応募ノートを開く（案件25件＋応募文の下書き）</a>
             <p class="note">※スマホの標準カレンダーに「営業ログを記録」の予定が毎日8:00で入ります。通知はカレンダーから届きます。</p>
-          </div>
-
-          <details class="curcard" id="curcard">
-            <summary>ラボのカリキュラム（全体の流れ）<span class="curnow" id="curnow"></span></summary>
-            <div class="curbody" id="curbody"></div>
-          </details>
-
-          <div class="card" id="labnoteCard" style="margin-top:16px; padding-bottom:18px;">
-            <h2>famm講師のAI実験ノート</h2>
-            <p class="qguide">famm講師が実際にAIを触って気づいたこと・使い方が、ここに溜まっていきます</p>
-            <div id="labnotes"></div>
           </div>
 
           <div style="display:none;">
@@ -364,8 +350,8 @@ footer{text-align:center; font-size:14px; color:#a89e93; padding:34px 16px 10px;
         <!-- advice -->
         <div class="view" id="v_adv">
           <div class="card" style="padding-bottom:18px;">
-            <h2>famm講師からのアドバイス</h2>
-            <div id="advlist"><div class="empty"><img src="assets/fm-laptop.png" alt="" style="width:88px; display:block; margin:0 auto 8px;" onerror="this.style.display='none'">カルテを作成すると、ここにfamm講師からのアドバイスが届きます。</div></div>
+            <h2>AI fammからのアドバイス</h2>
+            <div id="advlist"><div class="empty"><img src="assets/fm-laptop.png" alt="" style="width:88px; display:block; margin:0 auto 8px;" onerror="this.style.display='none'">カルテを作成すると、ここにAI fammからのアドバイスが届きます。</div></div>
             <button class="refresh" id="refresh">更新する</button>
           </div>
         </div>
@@ -375,14 +361,6 @@ footer{text-align:center; font-size:14px; color:#a89e93; padding:34px 16px 10px;
           <div class="card" style="padding-bottom:20px;">
             <h2>わたしの分析レポート</h2>
             <div id="anabody"></div>
-          </div>
-        </div>
-
-        <!-- curriculum -->
-        <div class="view" id="v_cur">
-          <div class="card" style="padding-bottom:20px;">
-            <h2>ラボのカリキュラム</h2>
-            <div id="curpage"></div>
           </div>
         </div>
 
@@ -398,7 +376,7 @@ footer{text-align:center; font-size:14px; color:#a89e93; padding:34px 16px 10px;
             <h3 style="font-size:14px; color:var(--pink2); margin:22px 0 6px;">不具合のご報告</h3>
             <p style="font-size:14px;">うまく動かないところがあったら、こちらから教えてください。すぐ直します。</p>
             <button id="bugOpen2" style="border:1.5px solid #efd2a0; background:#ffffff; color:var(--pink2); border-radius:999px; padding:10px 24px; font-size:14px; font-weight:800; cursor:pointer; font-family:inherit; margin-top:8px;">不具合を報告する</button>
-            <p style="margin-top:18px;">書いた内容は、famm講師だけが見られます。データはこの専用ページとfamm講師の管理画面の間だけでやりとりされます。</p>
+            <p style="margin-top:18px;">書いた内容は、運営とAI fammだけが見られます。データはこの専用ページと運営の管理画面の間だけでやりとりされます。</p>
             <p style="margin-top:12px;"><a id="reset" href="javascript:void(0)">プロフィールをリセットする</a></p>
           </div>
         </div>
@@ -412,7 +390,7 @@ footer{text-align:center; font-size:14px; color:#a89e93; padding:34px 16px 10px;
           <div class="fi"><div><b>案件を取る（営業）</b><p>提案文・ポートフォリオ・事前リサーチ・要件整理を、AIが下書きします。</p></div></div>
           <div class="fi"><div><b>制作を速く・良く</b><p>参考デザインの言語化、コピー・構成案、配色フォントの壁打ちまで。</p></div></div>
           <div class="fi"><div><b>事務を5分に</b><p>見積・請求・契約・返信メール・議事録要約を、AIにおまかせ。</p></div></div>
-          <div class="fi"><div><b>カルテだから、積み上がる</b><p>AIは、壁打ちだけだと「それっぽい答え」を返してくれます。でも、あなたの情報は蓄積されず、一般的な基準で答えます。このカルテは、あなたの相談と、famm講師の基準が積み上がっていく場所です。育った内容は「あなたの取扱説明書」にして、お使いのChatGPTやClaudeにそのまま渡せます（分析レポートから作れます）。</p></div></div>
+          <div class="fi"><div><b>カルテだから、積み上がる</b><p>AIは、壁打ちだけだと「それっぽい答え」を返してくれます。でも、あなたの情報は蓄積されず、一般的な基準で答えます。このカルテは、あなたの相談と、AI fammの基準が積み上がっていく場所です。育った内容は「あなたの取扱説明書」にして、お使いのChatGPTやClaudeにそのまま渡せます（分析レポートから作れます）。</p></div></div>
         </div>
         <div class="wink">
           <div class="scr">一緒に<br>解決策を見つけて<br>いこうね！</div>
@@ -429,8 +407,7 @@ footer{text-align:center; font-size:14px; color:#a89e93; padding:34px 16px 10px;
 <div class="mnav">
   <button class="mn on" data-v="v_new" aria-label="新しいカルテを作成">作成</button>
   <button class="mn" data-v="v_list" aria-label="カルテの履歴">履歴</button>
-  <button class="mn" data-v="v_cur" aria-label="学習カリキュラム">学習</button>
-  <button class="mn" data-v="v_adv" aria-label="famm講師からの返信">返信</button>
+  <button class="mn" data-v="v_adv" aria-label="AI fammからの返信">返信</button>
   <button class="mn" data-v="v_ana">分析</button>
   <button class="mn" data-v="v_set">設定</button>
 </div>
@@ -493,162 +470,13 @@ var demoNotes=[
 {worry:"AIが気になるのに、デザインの仕事のどこで使えるのか、何から始めればいいのかわからないままです。",want:"自分の制作フローに合う始め方を知りたいです。",created_at:new Date(Date.now()-180000000).toISOString()}
 ];
 var demoAdv=[
-{author_name:"famm講師",message:"カルテ、読みました。\n提案文に1時間かかっているとのこと、そこはAIがいちばん得意なところです。今夜、気になる案件の募集要項をそのまま貼って「私の強みが伝わる提案文のたたき台を作って」と頼んでみてください。5分でたたき台ができます。\nあなたの場合、長い文章の下書きが得意なClaudeが合っています。",created_at:new Date(Date.now()-43200000).toISOString()},
-{author_name:"famm講師",message:"AIとの付き合い方について、ひとつだけ。\n全部いっぺんに覚えようとしなくて大丈夫です。まずは「提案文のたたき台」と「クライアントの事前リサーチ」の2つだけAIに渡してみてください。提案の数と質が、両方いっぺんに上がります。",created_at:new Date(Date.now()-3600000).toISOString()}
+{author_name:"AIラボ運営",message:"カルテ、読みました。\n提案文に1時間かかっているとのこと、そこはAIがいちばん得意なところです。今夜、気になる案件の募集要項をそのまま貼って「私の強みが伝わる提案文のたたき台を作って」と頼んでみてください。5分でたたき台ができます。\nあなたの場合、長い文章の下書きが得意なClaudeが合っています。",created_at:new Date(Date.now()-43200000).toISOString()},
+{author_name:"AIラボ運営",message:"AIとの付き合い方について、ひとつだけ。\n全部いっぺんに覚えようとしなくて大丈夫です。まずは「提案文のたたき台」と「クライアントの事前リサーチ」の2つだけAIに渡してみてください。提案の数と質が、両方いっぺんに上がります。",created_at:new Date(Date.now()-3600000).toISOString()}
 ];
 
-/* ===== famm講師のAI実験ノート（おしらせのうち【AIメモ】で始まるものだけ） ===== */
-var LABTAG="【AIメモ】";
-var demoLabNotes=[
-{id:"dm1",worry:"【AIメモ】提案文のたたき台は、Claudeに「募集要項をそのまま貼る→自分の実績を3つ渡す」の順で頼むと精度が上がりました。順番を逆にすると一般論になります。",created_at:new Date(Date.now()-7200000).toISOString()},
-{id:"dm2",worry:"【AIメモ】参考デザインの言語化は、ChatGPTに画像を渡して「余白・配色・フォントの3点で分解して」と聞くのが早いです。",created_at:new Date(Date.now()-260000000).toISOString()},
-{id:"dm3",worry:"今週の勉強会は、アーカイブ（録画）を残します。当日むずかしい方はあとから見てくださいね。",created_at:new Date(Date.now()-300000000).toISOString()}
-];
-function renderLabNotes(list){
-  var box=document.getElementById("labnotes");
-  if(!box) return;
-  var picked=(list||[]).filter(function(n){ return String(n.worry||"").indexOf(LABTAG)===0; });
-  box.innerHTML="";
-  if(!picked.length){
-    var em=document.createElement("div"); em.className="empty";
-    em.textContent="メモはこれから増えていきます。famm講師がAIを試したら、ここに並びます。";
-    box.appendChild(em); return;
-  }
-  picked.forEach(function(n){
-    var e=document.createElement("div"); e.className="hitem";
-    var d=document.createElement("span"); d.className="d"; d.textContent=fmt(n.created_at); e.appendChild(d);
-    var b=document.createElement("div");
-    fillText(b,String(n.worry||"").slice(LABTAG.length).replace(/^[\s　]+/,""));
-    e.appendChild(b);
-    box.appendChild(e);
-  });
-}
-function loadLabNotes(){
-  if(DEMO){ renderLabNotes(demoLabNotes); return; }
-  sb("ailab_notes?member_id=eq.notice_all&mood=eq.おしらせ&order=created_at.desc&limit=30").then(function(r){return r.json();})
-    .then(function(j){ if(Array.isArray(j)) renderLabNotes(j); }).catch(function(){});
-}
 
-function renderHist(list){
-  var h=document.getElementById("hist");
-  if(!list.length){ h.innerHTML='<div class="empty">作成したカルテが、ここに並びます。</div>'; return; }
-  h.innerHTML="";
-  list.forEach(function(n){
-    var e=document.createElement("div"); e.className="hitem";
-    var ims=IMGMAP[String(n.id)]||[];
-    e.innerHTML='<span class="d">'+fmt(n.created_at)+'</span>'+
-      '<div>'+esc(n.worry)+'</div>'+(n.want?'<div class="w2">AIにしてほしいこと：'+esc(n.want)+'</div>':'')+
-      (ims.length?'<div class="hthumbs">'+ims.map(function(d){ return '<img src="'+d+'" alt="添付画像">'; }).join("")+'</div>':'');
-    Array.prototype.forEach.call(e.querySelectorAll(".hthumbs img"),function(im){ im.onclick=function(){ viewImg(im.src); }; });
-    h.appendChild(e);
-  });
-}
-function renderAdv(list){
-  var a=document.getElementById("advlist");
-  if(!list.length){ a.innerHTML='<div class="empty"><img src="assets/fm-laptop.png" alt="" style="width:88px; display:block; margin:0 auto 8px;" onerror="this.style.display=\'none\'">カルテを作成すると、ここにfamm講師からのアドバイスが届きます。</div>'; return; }
-  a.innerHTML="";
-  list.forEach(function(m){
-    var e=document.createElement("div"); e.className="adv";
-    e.innerHTML='<div class="head"><img class="av" src="assets/fm-desk.png" alt="" onerror="this.style.display=\'none\'"><div><div class="nm">'+esc(m.author_name||"famm講師")+'</div><div class="dt">'+fmt(m.created_at)+'</div></div></div>'+
-      '<div class="body">'+esc(m.message).replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>')+'</div>';
-    a.appendChild(e);
-  });
-}
-var lastNotes=[], lastAdv=[], lastManual="", IMGMAP={}, demoImgs=[], EXPIRY="", STOPPED=false;
-/* 受講期限を過ぎていたら、画面を停止表示に切り替える（オープンチャットはそのまま） */
-function checkExpiry(){
-  if(!EXPIRY||EXPIRY==="9999-12-31"||STOPPED) return;
-  var today=todayKey();
-  if(EXPIRY>=today) return;
-  STOPPED=true;
-  var main=document.querySelector(".colmain")||document.getElementById("main-content")||document.body;
-  var d=new Date(EXPIRY+"T00:00:00");
-  var box=document.createElement("div"); box.className="card"; box.id="stopCard";
-  box.innerHTML='<h2>受講期間が終了しました</h2><p class="qguide" style="margin-top:8px;">'+(d.getMonth()+1)+'月'+d.getDate()+'日で、カルテの受講期間が終わりました。ここまで一緒に進めてくださって、ありがとうございました🤍</p>'+
-    '<p class="qguide" style="margin-top:10px;"><b>続ける場合</b>：月額【famm設定】円（税込）の継続プランで、カルテ・返信・取扱説明書をそのまま使い続けられます。オープンチャットでfamm講師に「継続希望」とお知らせください。</p>'+
-    '<p class="qguide" style="margin-top:10px;">オープンチャット（AIの情報交換の場）は、このあとも残れます。</p>';
-  main.innerHTML=""; main.appendChild(box);
-}
-function splitRows(j){
-  /* 同じ member_id の行を、カルテ本文／添付画像／営業ログ に分ける */
-  IMGMAP={}; LOGS=[];
-  var notes=[];
-  j.forEach(function(n){
-    if(n.mood==="添付画像"){ var k=String(n.want||"").replace(/^karte:/,"").split("#")[0]; (IMGMAP[k]=IMGMAP[k]||[]).push(n.worry); }
-    else if(n.mood==="営業ログ"){ LOGS.push(n); }
-    else if(n.mood==="期限"){ if(!EXPIRY||String(n.want||"")>EXPIRY) EXPIRY=String(n.want||""); }
-    else if(n.mood==="応募ノート"){ }
-    else notes.push(n);
-  });
-  Object.keys(IMGMAP).forEach(function(k){ IMGMAP[k].reverse(); });
-  return notes;
-}
-function loadAll(){
-  if(DEMO){
-    lastNotes=splitRows(demoNotes.slice().concat(demoImgs)); lastAdv=demoAdv.slice();
-    renderHist(lastNotes); renderAdv(lastAdv); renderAnalysis(); renderLog(); return;
-  }
-  sb("ailab_notes?member_id=eq."+UID+"&order=created_at.desc&limit=300").then(function(r){return r.json();})
-    .then(function(j){ if(Array.isArray(j)){ lastNotes=splitRows(j); checkExpiry(); if(STOPPED) return; renderHist(lastNotes); renderAnalysis(); renderLog(); } }).catch(function(){});
-  sb("ailab_advice?target_id=eq."+UID+"&order=created_at.desc&limit=100").then(function(r){return r.json();})
-    .then(function(j){ if(Array.isArray(j)){ j=j.filter(function(a){ return String(a.author_name||"").indexOf("draft")!==0; }); lastAdv=j; renderAdv(j); renderAnalysis(); } }).catch(function(){});
-}
 
-(function(){
-  var el=document.getElementById("niCur");
-  if(el) el.onclick=function(){ if(window.switchView) window.switchView("v_cur"); };
-})();
-
-/* ===== カリキュラム常設（オープン準備中） ===== */
-(function(){
-  var cfgWeek=window.cfgWeek||function(i,d){return d||"日程調整中";};
-  var CF=window.cfg||function(k,d){return d;};
-  var opened=true;  // 公開前に隠したい場合は false に
-  var WEEKS=[
-    ["第1週",cfgWeek(0),"AIを“デザインの相棒”にする","STEP1",
-      ["AIへの頼み方の型（前提→依頼→出したい形）を身につける","得意ジャンル・作風をAIに覚えさせて“自分専用”に育てる","声に出して相談する“壁打ち”の基本"]],
-    ["第2週",cfgWeek(1),"案件を“取る”①　提案文とポートフォリオ","STEP2",
-      ["提案文・応募文のたたき台を生成（クラウドソーシング向けにテンプレ化）","ポートフォリオの自己紹介文・実績説明文をブラッシュアップ"]],
-    ["第3週",cfgWeek(2),"案件を“取る”②　リサーチと要件整理","STEP3",
-      ["クライアントのHP・SNSをAIに読ませて事前リサーチ→提案の質を上げる","ヒアリング項目リストの自動生成と、ヒアリング後の要件整理"]],
-    ["第4週",cfgWeek(3),"制作を“速く・良く”する","STEP4",
-      ["参考デザインの分析・言語化（なぜ良いかをAIと分解する）","キャッチコピー・LP構成案の生成／ラフ・ワイヤーのアイデア出し","配色・フォント選定の壁打ち／画像生成でダミー・FV素材を作る"]],
-    ["第5週",cfgWeek(4),"事務作業を“5分”に","STEP5",
-      ["見積書・請求書・契約書のたたき台をAIで作る","返信・リマインドメール、議事録の音声文字起こし→自動要約","タスク整理・週間スケジュールの壁打ち／確定申告前の経費カテゴリ整理"]],
-    ["第6週",cfgWeek(5),"最終ミッション：言いにくい連絡＋自分専用ツール化","STEP6",
-      ["単価交渉・お断りメールなど「言いにくい連絡」の文面相談","納品前セルフチェックリストの運用","学んだ頼み方を“自分専用のプロンプト集/ツール”にまとめる"]]
-  ];
-  var starts=[new Date("2099-01-01"),new Date("2099-01-08"),new Date("2099-01-15"),new Date("2099-01-22"),new Date("2099-01-29"),new Date("2099-02-05"),new Date("2099-02-12")];
-  var now=Date.now(), cur=-1;
-  for(var i=0;i<6;i++){ if(now>=starts[i].getTime() && now<starts[i+1].getTime()) cur=i; }
-  var html="", htmlFull="";
-  if(opened){
-    WEEKS.forEach(function(w,i){
-      var head='<div class="curwk'+(i===cur?" now":"")+'"><span class="wn">'+w[0]+'<br>'+w[1]+'</span><span class="wt"><b>'+w[2]+(i===cur?"　←いまここ":"")+'</b>'+w[3]+'</span></div>';
-      html+=head;
-      var items=(w[4]||[]).map(function(it){return '<li>'+it+'</li>';}).join("");
-      htmlFull+=head+(items?'<ul style="margin:2px 0 14px 2px; padding-left:18px; font-size:14px; color:#5e564c; line-height:1.9;">'+items+'</ul>':"");
-    });
-    var sem='<div class="curwk"><span class="wn">勉強会</span><span class="wt"><b>'+CF("start_date","【famm設定】")+'</b>アーカイブ（録画）あり</span></div>';
-    html+=sem; htmlFull+=sem;
-  } else {
-    html='<div style="text-align:center; padding:26px 10px;">'
-      +'<div style="font-size:15px; font-weight:800; color:#2a2a2a; margin-top:8px;">カリキュラムは<br>まもなくオープンします</div>'
-      +'<div style="font-size:14px; color:#8f8577; margin-top:10px; line-height:2;">みなさんのカルテの悩みをぜんぶ読んで、<br>famm講師が心を込めて準備しています。<br>おたのしみに。</div>'
-      +'</div>';
-    htmlFull=html;
-  }
-  var box=document.getElementById("curbody"); if(box) box.innerHTML=html;
-  var page=document.getElementById("curpage"); if(page) page.innerHTML=htmlFull;
-  var lbl=document.getElementById("curnow");
-  if(lbl){
-    if(!opened){ lbl.textContent="オープン準備中"; }
-    else if(cur>=0){ lbl.textContent="いま"+WEEKS[cur][0]; }
-    else if(now<starts[0].getTime()){ lbl.textContent="開講前"; }
-  }
-})();
-
-/* ===== famm講師からのメッセージ（1人1回表示） ===== */
+/* ===== AI fammからのメッセージ（1人1回表示） ===== */
 (function(){
   var CF=window.cfg||function(k,d){return d;};
   function show(msg){
@@ -669,7 +497,7 @@ function loadAll(){
   if(DEMO){
     var greeted=false;
     try{ greeted=sessionStorage.getItem("fmlab_demo_greeted")==="1"; sessionStorage.setItem("fmlab_demo_greeted","1"); }catch(e){}
-    if(!greeted) setTimeout(function(){ show("（デモ表示）ようこそ、"+CF("labo_name","AI活用ラボ")+"へ。famm講師からのメッセージがここに届きます。"); },800);
+    if(!greeted) setTimeout(function(){ show("（デモ表示）ようこそ、"+CF("labo_name","AI活用ラボ")+"へ。AI fammからのメッセージがここに届きます。"); },800);
     return;
   }
   sb("ailab_notes?member_id=eq.notice_all&mood=eq.おしらせ&order=created_at.desc&limit=1").then(function(r){return r.json();})
@@ -812,8 +640,8 @@ function renderAnalysis(){
       h+='<div class="anasec"><h3>悩みの変化</h3><p style="font-size:14px;">'+line+'</p></div>';
     }
   }
-  /* 3) famm講師からのアドバイスの傾向 */
-  h+='<div class="anasec"><h3>famm講師がくり返し伝えていること</h3>';
+  /* 3) AI fammからのアドバイスの傾向 */
+  h+='<div class="anasec"><h3>AI fammがくり返し伝えていること</h3>';
   if(lastAdv.length){
     var atext=lastAdv.map(function(a){return a.message||"";}).join(" ");
     var themes=[
@@ -829,7 +657,7 @@ function renderAnalysis(){
     ts.sort(function(a,b){return b[1]-a[1];});
     if(ts.length){ ts.slice(0,3).forEach(function(t){ h+='<div class="trline"><i>'+t[1]+'回</i><span style="font-weight:700; color:var(--navy2);">'+t[0]+'</span></div>'; }); }
     else{ h+='<p style="font-size:14px;">アドバイスの傾向は、やりとりが増えると表示されます。</p>'; }
-  }else{ h+='<p style="font-size:14px;">famm講師からのアドバイスが届くと、ここに傾向が表示されます。</p>'; }
+  }else{ h+='<p style="font-size:14px;">AI fammからのアドバイスが届くと、ここに傾向が表示されます。</p>'; }
   h+='</div>';
   /* 4) AI活用プラン */
   var planKey=top.length?top[0][0]:"やり方・入口";
@@ -848,7 +676,7 @@ function renderAnalysis(){
     if(top.length) m+="- いまの悩みの傾向："+top.slice(0,3).map(function(t){return t[0];}).join("／")+"\n";
     if(habs.length) m+="- 思考のくせ："+habs[0][0][0]+"（"+habs[0][0][2]+"）\n";
     if(ts&&ts.length){
-      m+="\n## famm講師から繰り返し言われていること\n";
+      m+="\n## AI fammから繰り返し言われていること\n";
       ts.slice(0,5).forEach(function(t){ m+="- "+t[0]+"（"+t[1]+"回）\n"; });
     }
     m+="\n## 私へのAI活用プラン\n- おすすめの相棒："+pl[0]+"\n- まかせること："+pl[1]+"\n- 最初の一歩："+pl[2]+"\n";
@@ -864,12 +692,12 @@ function renderAnalysis(){
     m+="\n## あなた（AI）へのお願い\n"
       +"- 上の内容を前提に、私の相談に答えてください\n"
       +"- 数字・相場・断定は根拠を添えるか「確認が必要」と言ってください\n"
-      +"- 提案文や文章は、famm講師のアドバイスの基準（相手の悩みを理解して解決する・売り込まない）に沿って直してください\n";
+      +"- 提案文や文章は、AI fammのアドバイスの基準（相手の悩みを理解して解決する・売り込まない）に沿って直してください\n";
     lastManual=m;
   })();
   h+=MANUAL_SEC;
   h+='<p class="ananote">カルテ'+lastNotes.length+'件・アドバイス'+lastAdv.length+'件をもとに自動分析しています。カルテが増えるほど、精度が上がります。</p>';
-  /* 5) famm講師の処方箋（もらったアドバイスから抽出） */
+  /* 5) AI fammの処方箋（もらったアドバイスから抽出） */
   if(lastAdv.length){
     var atext2=lastAdv.map(function(a){return a.message||"";}).join(" ");
     var RX=[
@@ -889,21 +717,21 @@ function renderAnalysis(){
       if(atext2.indexOf(r[0])>=0 && !seenRx[r[1]]){ seenRx[r[1]]=1; rx.push(r[1]); }
     });
     if(rx.length){
-      h+='<div class="anasec"><h3>famm講師の処方箋（あなた専用）</h3>';
+      h+='<div class="anasec"><h3>AI fammの処方箋（あなた専用）</h3>';
       rx.slice(0,4).forEach(function(t){ h+='<p style="font-size:14px; margin-top:6px;">☐ '+t+'</p>'; });
-      h+='<p style="font-size:14px; color:#a89e93; margin-top:8px;">famm講師からのアドバイスに、くり返し出てくる行動です。できた日はカルテで教えてくださいね。</p></div>';
+      h+='<p style="font-size:14px; color:#a89e93; margin-top:8px;">AI fammからのアドバイスに、くり返し出てくる行動です。できた日はカルテで教えてくださいね。</p></div>';
     }
     /* 6) 最新の宿題 */
     var latest=(lastAdv[0].message||"").split("。")[0];
     if(latest){
-      h+='<div class="anasec"><h3>famm講師からの最新メッセージ</h3><p style="font-size:14px; background:var(--pinkbg); border-radius:12px; padding:10px 14px;">'+latest.slice(0,90)+'。</p></div>';
+      h+='<div class="anasec"><h3>AI fammからの最新メッセージ</h3><p style="font-size:14px; background:var(--pinkbg); border-radius:12px; padding:10px 14px;">'+latest.slice(0,90)+'。</p></div>';
     }
   }
   /* 7) あなたの歩み */
   (function(){
     var first=chrono.length?new Date(chrono[0].created_at):null;
     var days=first?Math.max(1,Math.round((Date.now()-first.getTime())/86400000)):0;
-    h+='<div class="anasec"><h3>あなたの歩み</h3><p style="font-size:14px;">相談をはじめて <b>'+days+'日</b>／カルテ <b>'+lastNotes.length+'枚</b>／famm講師からの返信 <b>'+lastAdv.length+'通</b>'+(top.length?('／いちばんのテーマは<b>「'+top[0][0]+'」</b>'):'')+'</p></div>';
+    h+='<div class="anasec"><h3>あなたの歩み</h3><p style="font-size:14px;">相談をはじめて <b>'+days+'日</b>／カルテ <b>'+lastNotes.length+'枚</b>／AI fammからの返信 <b>'+lastAdv.length+'通</b>'+(top.length?('／いちばんのテーマは<b>「'+top[0][0]+'」</b>'):'')+'</p></div>';
   })();
   box.innerHTML=h;
   bindManual();
@@ -924,14 +752,14 @@ document.getElementById("send").onclick=function(){
   var btn=this; btn.disabled=true;
   var isRes=document.getElementById("isResult").checked;
   if(isRes && w.indexOf("【やってみた結果】")!==0) w="【やってみた結果】"+w;
-  var isUrg=document.getElementById("isUrgent").checked;
+  var isUrg=false;
   var rec={member_id:UID||"demo",member_name:NAME,mood:(isUrg?"急ぎ":null),worry:w,want:wt};
   var imgs=IMGS.slice();
   function done(){
     document.getElementById("okmsg").style.display="block";
     document.getElementById("worry").value=""; document.getElementById("want").value="";
     document.getElementById("c1").textContent="0"; document.getElementById("c2").textContent="0";
-    document.getElementById("isResult").checked=false; document.getElementById("isUrgent").checked=false; IMGS=[]; renderThumbs();
+    document.getElementById("isResult").checked=false; IMGS=[]; renderThumbs();
     btn.disabled=false;
     setTimeout(function(){ document.getElementById("okmsg").style.display="none"; },4500);
     loadAll();
@@ -1015,7 +843,7 @@ document.getElementById("slSave").onclick=function(){
     .catch(function(){ btn.disabled=false; alert("記録できませんでした。もう一度お試しください。"); });
 };
 (function(){ var a=document.getElementById("oubohref"); if(a){ a.href="oubo.html"+(UID?("?u="+encodeURIComponent(UID)+(NAME?("&name="+encodeURIComponent(NAME)):"")):(DEMO?"?demo=1":"")); }
-  var t=document.getElementById("tensakuhref"); if(t){ t.href="tensaku.html"+(UID?("?u="+encodeURIComponent(UID)+(NAME?("&name="+encodeURIComponent(NAME)):"")):(DEMO?"?demo=1":"")); } })();
+  })();
 document.getElementById("slIcs").onclick=function(){
   var d=new Date(); d.setDate(d.getDate()+1); var ymd=d.getFullYear()+("0"+(d.getMonth()+1)).slice(-2)+("0"+d.getDate()).slice(-2);
   var url=location.href.split("?")[0]+(UID?("?uid="+encodeURIComponent(UID)):"");
@@ -1085,7 +913,7 @@ loadLabNotes();
 <div id="ntcOv">
   <div id="ntcCard">
     <img src="assets/fm-suit.png" alt="" onerror="this.style.display='none'">
-    <h3>famm講師からのメッセージ</h3>
+    <h3>AI fammからのメッセージ</h3>
     <div id="ntcMsg"></div>
     <button id="ntcClose">読みました</button>
   </div>

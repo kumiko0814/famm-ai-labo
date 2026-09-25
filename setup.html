@@ -84,14 +84,14 @@ a{color:var(--navy);}
     <p>複製したリポジトリの中にある <b>labo_config.js</b> を開きます。「 」で囲まれた部分を、ご自身のサービスの内容に書き換えるだけで、LP・AIチャット・カルテ・管理画面すべての表示が変わります。</p>
     <pre id="cfgsample">var LABO_CONFIG = {
   labo_name: "AI活用ラボ", company: "Famm",
-  instructor_name: "famm講師", instructor_nick: "famm講師",
+  instructor_name: "AI famm", instructor_nick: "AI famm",
   instructor_title: "Famm Webデザイナー講座", ai_name: "AI famm",
   term_label: "第1期", target: "Famm 卒業生・受講生 限定",
   price: "【famm設定】円", price_badge: "第1期 特別価格｜受講生・卒業生 限定",
   price_note: "第2期以降の一般募集では【famm設定】円（税込）を予定しています。第1期は特別価格でご案内します。",
   payment: "クレジットカード決済（分割のご相談も可能）／銀行振込",
   start_date: "【famm設定】", deadline: "【famm設定】",
-  archive_note: "毎回の勉強会はアーカイブ（録画）が残るので、当日参加できなくても後から視聴できます。",
+  archive_note: "",
   apply_url: "#price", apply_label: "お申し込み方法は famm からご案内します",
   tokutei_url: "https://famm.us/ja/school",
   weeks: ["日程調整中","日程調整中","日程調整中","日程調整中","日程調整中","日程調整中"]
@@ -116,7 +116,7 @@ a{color:var(--navy);}
       <tr><td>payment</td><td>お支払い方法。</td></tr>
       <tr><td>start_date</td><td>開講予定日。</td></tr>
       <tr><td>deadline</td><td>お申込みの締切日。</td></tr>
-      <tr><td>archive_note</td><td>アーカイブ（録画）に関する案内文。</td></tr>
+      <tr><td>archive_note</td><td>（未使用・空のまま）</td></tr>
       <tr><td>apply_url</td><td>お申込みフォーム・決済ページのURL。</td></tr>
       <tr><td>apply_label</td><td>お申込みボタンの文言。</td></tr>
       <tr><td>tokutei_url</td><td>特定商取引法に基づく表記のURL。</td></tr>
@@ -173,7 +173,7 @@ a{color:var(--navy);}
   <div class="step" id="step4">
     <h3><b>STEP 4</b>　Supabaseを作って本番化する</h3>
     <p>Supabaseは、AIカルテのやり取りを保存しておくための、無料で使えるデータの保管庫です。作業は「SQLを貼って実行」を含めて1回だけです。</p>
-    <div class="note"><b>弊社 が運用を代行する場合（famm講師はこちら）：</b>4-1・4-2・4-3 までを進め、できた <code>Project URL</code> と <code>anon public</code> キーの2つを 弊社 に送ってください。4-4 と 4-5 は 弊社 側で行います。</div>
+    <div class="note"><b>弊社 が運用を代行する場合（famm担当者はこちら）：</b>4-1・4-2・4-3 までを進め、できた <code>Project URL</code> と <code>anon public</code> キーの2つを 弊社 に送ってください。4-4 と 4-5 は 弊社 側で行います。</div>
 
     <h4>4-1　Supabase（無料）のアカウントを作る</h4>
     <p>① <a href="https://supabase.com" target="_blank">supabase.com</a> でアカウント作成（GitHubかメールで1分ほどです）<br>
@@ -193,7 +193,7 @@ a{color:var(--navy);}
 create table if not exists ailab_advice (
   id bigserial primary key,
   target_id text not null,
-  author_name text default 'famm講師',
+  author_name text default 'AI famm',
   message text,
   created_at timestamptz default now()
 );

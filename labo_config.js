@@ -7,9 +7,9 @@ var LABO_CONFIG = {
   /* ===== ブランド・運営者 ===== */
   labo_name: "AIラボ",
   company: "Famm",
-  instructor_name: "famm講師",
-  instructor_nick: "famm講師",
-  instructor_title: "Famm Webデザイナー講座",
+  instructor_name: "AI famm",
+  instructor_nick: "AI famm",
+  instructor_title: "24時間の自動返信",
   ai_name: "AI famm",
 
   /* ===== 募集情報（募集期ごとに書き換える） ===== */
@@ -21,7 +21,7 @@ var LABO_CONFIG = {
   payment: "【famm設定】",
   start_date: "【famm設定】",
   deadline: "【famm設定】",
-  archive_note: "毎回の勉強会はアーカイブ（録画）が残るので、当日参加できなくても後から視聴できます。",
+  archive_note: "",
 
   /* ===== リンク ===== */
   apply_url: "#price",   // famm指定のお申し込みページに差し替え

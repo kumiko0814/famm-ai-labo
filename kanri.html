@@ -161,7 +161,7 @@ input[type=text]{width:100%; border:1.5px solid #e8e1d3; border-radius:12px; pad
     <div class="m"><small><span data-cfg="labo_name">AI活用ラボ</span></small></div>
     <div class="h">運営者ページ</div>
   </div>
-  <img src="assets/fm-desk.png" alt="famm講師" onerror="this.style.display='none'">
+  <img src="assets/fm-desk.png" alt="AI famm" onerror="this.style.display='none'">
   <span class="burger">≡</span>
 </div>
 
@@ -174,7 +174,6 @@ input[type=text]{width:100%; border:1.5px solid #e8e1d3; border-radius:12px; pad
       <div class="ni on">ダッシュボード</div>
       <div class="ni">カルテ受信ボックス<span class="bdg">4</span></div>
       <div class="ni">アドバイス管理</div>
-      <div class="ni">カリキュラム進捗</div>
       <div class="ni">ユーザー管理</div>
       <div class="ni">分析レポート</div>
       <div class="ni">設定</div>
@@ -182,7 +181,7 @@ input[type=text]{width:100%; border:1.5px solid #e8e1d3; border-radius:12px; pad
     <div class="sprof">
       <img src="assets/fm-desk.png" alt="" onerror="this.style.display='none'">
       <div>
-        <div class="nm">famm講師</div>
+        <div class="nm">AI famm</div>
         <div class="rl">Famm Webデザイナー講座</div>
         <div class="mt">そのこだわりが、<br>しごとになる。</div>
       </div>
@@ -195,7 +194,7 @@ input[type=text]{width:100%; border:1.5px solid #e8e1d3; border-radius:12px; pad
       <div class="eyebrow"><span data-cfg="labo_name">AI活用ラボ</span></div>
       <h1>AIカルテ 管理者ボード</h1>
       <p class="sub">下書きを読んで、必要ならひとこと編集。最後に「承認して送信」で届けましょう。</p>
-<nav class="ui-tasknav" aria-label="管理メニュー"><a href="#sec-inbox">下書きを確認</a><a href="#sec-progress">学習の進捗</a><a href="#sec-invite">参加者を招待</a><a href="#sec-notice">お知らせを送る</a></nav>
+<nav class="ui-tasknav" aria-label="管理メニュー"><a href="#sec-inbox">下書きを確認</a><a href="#sec-invite">参加者を招待</a><a href="#sec-notice">お知らせを送る</a></nav>
       <img class="char" src="assets/fm-desk.png" alt="" onerror="this.style.display='none'">
       <div class="script">今日も一緒に<br>がんばろうね</div>
     </div>
@@ -214,7 +213,7 @@ input[type=text]{width:100%; border:1.5px solid #e8e1d3; border-radius:12px; pad
           <h2>参加者の招待（自動発行）</h2>
           <div class="links"><a href="index.html?demo=1&name=%E3%83%87%E3%83%A2" target="_blank">マイページのデモ</a><a href="setup.html" target="_blank">初期設定</a></div>
         </div>
-        <p style="font-size:14px; margin-top:8px;">参加者は下の入口URLから<b>自分で専用ページを作ります</b>（名前＋申込メール）。famm講師の作業は、案内文を一度オープンチャットに貼るだけです。</p>
+        <p style="font-size:14px; margin-top:8px;">参加者は下の入口URLから<b>自分で専用ページを作ります</b>（名前＋申込メール）。運営の作業は、案内文を一度お送りするだけです。</p>
         <div class="urlbox" style="display:block;" id="starturl"></div>
         <button class="gbtn" id="copystart" style="margin-top:12px;">全員向けの案内文をコピー</button>
         <div style="margin-top:4px;">
@@ -246,7 +245,7 @@ input[type=text]{width:100%; border:1.5px solid #e8e1d3; border-radius:12px; pad
       </div>
 
       <div class="hito">
-        <h3>famm講師からのひとこと</h3>
+        <h3>AI fammからのひとこと</h3>
         <img src="assets/fm-suit.png" alt="" onerror="this.style.display='none'">
         <p>AIが24時間<br>あなたの代わりに<br>寄り添ってくれるよ<br><br>相談者がもっと<br>安心できる環境を<br>一緒につくろう！</p>
       </div>
@@ -263,7 +262,7 @@ input[type=text]{width:100%; border:1.5px solid #e8e1d3; border-radius:12px; pad
       </div>
     </div>
 
-    <div class="inboxwrap" id="sec-progress">
+    <div class="inboxwrap" id="sec-progress" style="display:none;">
       <div class="ihead"><h2>カリキュラムの進捗</h2><span class="cnt" id="prgcnt"></span></div>
       <div style="padding:6px 22px 18px;">
         <div id="prgtop" style="display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin-top:6px;">
@@ -296,7 +295,7 @@ input[type=text]{width:100%; border:1.5px solid #e8e1d3; border-radius:12px; pad
 
     <div class="inboxwrap" id="sec-svy">
       <div class="ihead"><h2>AI診断アンケートの回答</h2><span class="cnt" id="svycnt"></span></div>
-      <div class="ilist" style="padding:8px 22px 16px;" id="svylist"><div class="empty2">まだ回答はありません。survey.html?v=sanka（勉強会に参加した方）／survey.html?v=fusanka（参加しなかった方）を配ると、ここに並びます。</div></div>
+      <div class="ilist" style="padding:8px 22px 16px;" id="svylist"><div class="empty2">まだ回答はありません。</div></div>
     </div>
 
     <div class="inboxwrap" id="sec-bugs">
@@ -400,7 +399,7 @@ document.getElementById("gen").onclick=function(){
   document.getElementById("openurl").href=url;
   document.getElementById("copyurl").onclick=function(){ copy(url,this,"URLをコピー"); };
   document.getElementById("copyline").onclick=function(){
-    copy(nm+"さん\n"+CF("labo_name","AI活用ラボ")+"の「AIカルテ」、"+nm+"さん専用ページができました☺️\n\n▼専用URL\n"+url+"\n\nいま困っていること・感じていることを、そのまま書いて送ってください。famm講師が読んで、アドバイスをお返しします。",this,"LINE送付文をコピー");
+    copy(nm+"さん\n"+CF("labo_name","AI活用ラボ")+"の「AIカルテ」、"+nm+"さん専用ページができました☺️\n\n▼専用URL\n"+url+"\n\nいま困っていること・感じていることを、そのまま書いて送ってください。AI fammが読んで、自動でアドバイスをお返しします。",this,"LINE送付文をコピー");
   };
 };
 
@@ -410,7 +409,7 @@ document.getElementById("copystarturl").onclick=function(){ copy(base()+"start.h
 
 /* 全員向け案内文 */
 document.getElementById("copystart").onclick=function(){
-  copy("【"+CF("labo_name","AI活用ラボ")+"】あなた専用の「AIカルテ」ページができました☺️\n\n▼こちらから30秒で作れます\n"+base()+"start.html\n\nお名前と、お申込みのメールアドレスを入れるだけです。\n困ったこと・感じていることを書いて送ってもらえたら、\nfamm講師が読んで、あなたに合うAIの使い方をお返しします。",this,"全員向けの案内文をコピー");
+  copy("【"+CF("labo_name","AI活用ラボ")+"】あなた専用の「AIカルテ」ページができました☺️\n\n▼こちらから30秒で作れます\n"+base()+"start.html\n\nお名前と、お申込みのメールアドレスを入れるだけです。\n困ったこと・感じていることを書いて送ってもらえたら、\nAI fammが読んで、あなたに合うAIの使い方をお返しします。",this,"全員向けの案内文をコピー");
 };
 
 /* inbox */
@@ -719,7 +718,7 @@ function renderInbox(notes,advMap,drafts){
       }
       function done(){ okm.style.display="block"; ta.value=""; sbtn.disabled=false; markDone(); setTimeout(function(){okm.style.display="none";},3000); }
       if(DEMO){ done(); return; }
-      sb("ailab_advice",{method:"POST",body:JSON.stringify({target_id:n.member_id,author_name:"famm講師",message:msg})})
+      sb("ailab_advice",{method:"POST",body:JSON.stringify({target_id:n.member_id,author_name:"AIラボ運営",message:msg})})
         .then(function(){
           done();
           if(n.id) sb("ailab_notes?id=eq."+n.id,{method:"PATCH",body:JSON.stringify({mood:"対応済み"})}).catch(function(){});
@@ -799,7 +798,7 @@ document.getElementById("ntsend").onclick=function(){
   if(!t){ document.getElementById("ntbody").focus(); return; }
   var b=this; b.disabled=true;
   if(DEMO){ document.getElementById("ntok").style.display="inline"; b.disabled=false; return; }
-  sb("ailab_notes",{method:"POST",body:JSON.stringify({member_id:"notice_all",member_name:"famm講師",mood:"おしらせ",worry:t})})
+  sb("ailab_notes",{method:"POST",body:JSON.stringify({member_id:"notice_all",member_name:"AIラボ運営",mood:"おしらせ",worry:t})})
     .then(function(){ document.getElementById("ntok").style.display="inline"; document.getElementById("ntbody").value=""; b.disabled=false; loadNotices(); })
     .catch(function(){ b.disabled=false; alert("送信できませんでした"); });
 };

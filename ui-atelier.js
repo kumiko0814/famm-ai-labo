@@ -74,7 +74,7 @@
     var heading = $('h1'); if (heading) heading.prepend(art('ribbon', 'guide-ribbon'));
     $$('.maprow').forEach(function (row) {
       var text = row.textContent;
-      row.prepend(art(/カルテ/.test(text) ? 'note' : /チャット|famm講師/.test(text) ? 'letter' : /ガイド|マニュアル/.test(text) ? 'book' : 'laptop', 'map-art'));
+      row.prepend(art(/カルテ/.test(text) ? 'note' : /チャット|AI famm/.test(text) ? 'letter' : /ガイド|マニュアル/.test(text) ? 'book' : 'laptop', 'map-art'));
     });
     $$('.page-promo .card .hd').forEach(function (head, i) { head.prepend(art(['ribbon','letter','note','tea','laptop','book','letter','palette'][i] || 'note', 'map-art')); });
   }

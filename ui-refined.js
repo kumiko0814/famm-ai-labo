@@ -112,7 +112,7 @@
     var previous = null, shown = false;
     var close = id === 'bugM' ? $('#bugC') : id === 'modal' ? $('#name-skip') : id === 'ntcOv' ? $('#ntcClose') : $('#aikX');
     modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-label', id === 'bugM' ? '不具合の報告' : id === 'ntcOv' ? 'famm講師からのメッセージ' : 'AI famm');
+    modal.setAttribute('aria-label', id === 'bugM' ? '不具合の報告' : id === 'ntcOv' ? 'AI fammからのメッセージ' : 'AI famm');
     if (id !== 'aikP') modal.setAttribute('aria-modal', 'true');
     function visible() { return getComputedStyle(modal).display !== 'none'; }
     function focusables() { return $$('button,a[href],input,textarea,select,[tabindex="0"]', modal).filter(function (el) { return !el.disabled && getComputedStyle(el).display !== 'none'; }); }
